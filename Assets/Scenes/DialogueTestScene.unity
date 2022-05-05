@@ -293,7 +293,9 @@ MonoBehaviour:
         y: 207
         width: 150
         height: 125
-      Text: '@bg fullOpaque
+      Text: '@DisableSkip
+
+        @bg fullOpaque
 
         @dialog fadeIn
 
@@ -313,9 +315,7 @@ MonoBehaviour:
         @Wait
         4
 
-        @Wait
-
-        @PlayNext'
+        @Wait'
       Type: 0
       NodeType: 0
       Parent: -1
@@ -329,7 +329,9 @@ MonoBehaviour:
         y: 207
         width: 150
         height: 125
-      Text: '!!!!!!!!!!!!'
+      Text: '@EnableSkip
+
+        !!!!!!!!!!!!'
       Type: 0
       NodeType: 1
       Parent: 0
@@ -413,21 +415,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerEnter:
     m_PersistentCalls:
+      m_Calls: []
+  onTriggerExit:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 956043864}
-        m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
-        m_MethodName: SetDialogue
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1416549490}
-          m_ObjectArgumentAssemblyTypeName: Dialogues, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6103844609516298641, guid: f484b582ded1be84baa4f91fcaedfbfb,
-          type: 3}
         m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
         m_MethodName: PlayTree
         m_Mode: 5
@@ -439,9 +431,6 @@ MonoBehaviour:
           m_StringArgument: init
           m_BoolArgument: 0
         m_CallState: 2
-  onTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
   onlyOnce: 1
   AutoStart: 1
 --- !u!65 &1416549492
@@ -479,6 +468,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6103844609516298641, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: dialogues
+      value: 
+      objectReference: {fileID: 1416549490}
     - target: {fileID: 6103844609516298642, guid: f484b582ded1be84baa4f91fcaedfbfb,
         type: 3}
       propertyPath: m_Pivot.x
@@ -603,6 +597,7 @@ GameObject:
   - component: {fileID: 1950602772}
   - component: {fileID: 1950602771}
   - component: {fileID: 1950602770}
+  - component: {fileID: 1950602773}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -676,3 +671,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1950602773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950602769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2

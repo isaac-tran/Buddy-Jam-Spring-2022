@@ -15,26 +15,17 @@ public class TriggerVolume : MonoBehaviour
         if(AutoStart)
         {
             onTriggerEnter.Invoke();
-            if (onlyOnce)
-                Destroy(gameObject);
-
             onTriggerExit.Invoke();
-            if (onlyOnce)
-                Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         onTriggerEnter.Invoke();
-        if (onlyOnce)
-            Destroy(gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         onTriggerExit.Invoke();
-        if (onlyOnce)
-            Destroy(gameObject);
     }
 }
