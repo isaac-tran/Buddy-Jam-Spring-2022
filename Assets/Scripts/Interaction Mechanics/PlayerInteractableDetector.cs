@@ -31,7 +31,7 @@ public class PlayerInteractableDetector : MonoBehaviour
         Ray ray = playerCamera.ScreenPointToRay(cameraCenterPoint);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 10))
+        if (Physics.Raycast(ray, out hit, 5))
         {
             Debug.Log("ray hit");
 
@@ -42,13 +42,5 @@ public class PlayerInteractableDetector : MonoBehaviour
                 Debug.Log("Interactable name: " + interactable.gameObject.name);
             }
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(Vector3.zero, Vector3.one * 90);
-        Gizmos.DrawRay(playerCamera.ScreenPointToRay(cameraCenterPoint).origin,
-            playerCamera.ScreenPointToRay(cameraCenterPoint).direction * 120);
     }
 }
