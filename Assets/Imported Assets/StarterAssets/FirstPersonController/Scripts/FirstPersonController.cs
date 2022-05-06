@@ -257,7 +257,6 @@ namespace StarterAssets
 			{
 				// move
 				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
-				Debug.Log(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 			}
 
 			// move the player
@@ -319,7 +318,6 @@ namespace StarterAssets
         {
 			if (_input.glitch && _glitchTimeoutDelta <= 0.0f)
 			{
-				Debug.Log("Glitched");
 				Vector3 glitchDirection = transform.TransformDirection(Vector3.forward).normalized;
 				_controller.Move(glitchDirection * GlitchDistance);
 				_glitchTimeoutDelta = GlitchTimeout;
