@@ -43,6 +43,12 @@ namespace StarterAssets
 		[Tooltip("What layers the character uses as ground")]
 		public LayerMask GroundLayers;
 
+		[Header("Glitch Mechanic")]
+		[Tooltip("Distance the player will glitch forward")]
+		public float GlitchDistance = 5f;
+		[Tooltip("Cooldown between glitches")]
+		public float GlitchTimeout = 5f;
+
 		[Header("Cinemachine")]
 		[Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
 		public GameObject CinemachineCameraTarget;
@@ -63,6 +69,8 @@ namespace StarterAssets
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
+		private float _glitchTimeoutDelta;
+
 
 	
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -115,6 +123,7 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			Glitch();
 		}
 
 		private void LateUpdate()
@@ -245,6 +254,18 @@ namespace StarterAssets
 				_verticalVelocity += Gravity * Time.deltaTime;
 			}
 		}
+
+		private void Glitch()
+        {
+			_glitchTimeoutDelta -= Time.deltaTime;
+
+			if (_input.glitch && _glitchTimeoutDelta <= 0.0f)
+			{
+				Debug.Log("Glitched");
+				_input.glitch = false;
+				_glitchTimeoutDelta = GlitchTimeout;
+			}
+        }
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
