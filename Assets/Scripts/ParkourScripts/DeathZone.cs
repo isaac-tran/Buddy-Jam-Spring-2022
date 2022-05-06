@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject Player; //connect the player in the editor when using
 
     private void OnTriggerEnter(Collider collider)
     {
