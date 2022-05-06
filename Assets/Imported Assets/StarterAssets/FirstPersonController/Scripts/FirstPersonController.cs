@@ -49,6 +49,14 @@ namespace StarterAssets
 		[Tooltip("Cooldown between glitches")]
 		public float GlitchTimeout = 5f;
 
+		[Header("Dash Mechanic")]
+		[Tooltip("Player will move at this speed instead while dashing.")]
+		public float DashSpeed = 50f;
+		[Tooltip("Duration of the dash, speed will change back to 0 or moving or sprinting speed.")]
+		public float DashDuration = 0.25f;
+		[Tooltip("Cooldown between dashes. Starts after exiting dash mode.")]
+		public float DashTimeout = 1f;
+
 		[Header("Cinemachine")]
 		[Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
 		public GameObject CinemachineCameraTarget;
@@ -60,7 +68,11 @@ namespace StarterAssets
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
+		[Space(10)]
+		[Header("Debug Mode")]
+
 		// player
+		[SerializeField] private bool _isDashing = false;
 		private float _speed;
 		private float _rotationVelocity;
 		private float _verticalVelocity;
@@ -69,7 +81,11 @@ namespace StarterAssets
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
-		private float _glitchTimeoutDelta;
+		[SerializeField] private float _glitchTimeoutDelta;
+		[SerializeField] private float _dashTimeoutDelta;
+		[SerializeField] private float _dashDurationTimeoutDelta;
+
+		private float _currentHorizontalSpeed;
 
 
 	
@@ -120,10 +136,16 @@ namespace StarterAssets
 
 		private void Update()
 		{
+			// a reference to the players current horizontal velocity
+			_currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
+
 			JumpAndGravity();
 			GroundedCheck();
-			Move();
+
+			SetDashMode();
 			Glitch();
+			Move();
+			CountdownDashModeTimer();
 		}
 
 		private void LateUpdate()
@@ -160,10 +182,47 @@ namespace StarterAssets
 			}
 		}
 
+		private void SetDashMode()
+        {
+			//	Put player in dash mode if dash is pressed, and cooldown is off, and is not in dash mode
+			if (_input.dash && _dashTimeoutDelta <= 0.0f && _isDashing == false)
+			{
+				Debug.Log("true");
+				_isDashing = true;
+				_dashDurationTimeoutDelta = DashDuration;
+			}
+
+			//	If player is in dash mode and dash duration timed out, set dash mode to false
+			if (_isDashing && _dashDurationTimeoutDelta <= 0.0f)
+			{
+				//	Exit dash mode
+				_isDashing = false;
+
+				//	Start cooldown
+				_dashTimeoutDelta = DashTimeout;
+			}
+
+			//	Dash button has registered, switching back to false
+			_input.dash = false;
+		}
+
+		private void CountdownDashModeTimer()
+        {
+			_dashTimeoutDelta -= Time.deltaTime;
+			_dashDurationTimeoutDelta -= Time.deltaTime;
+		}
+
 		private void Move()
 		{
-			// set target speed based on move speed, sprint speed and if sprint is pressed
-			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			// set target speed based on move speed, sprint speed and if sprint is pressed, dash speed if dash is pressed
+			//float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			float targetSpeed;
+			if (_isDashing)
+				targetSpeed = DashSpeed;
+			else if (_input.sprint)
+				targetSpeed = SprintSpeed;
+			else
+				targetSpeed = MoveSpeed;
 
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -171,18 +230,15 @@ namespace StarterAssets
 			// if there is no input, set the target speed to 0
 			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 
-			// a reference to the players current horizontal velocity
-			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
-
 			float speedOffset = 0.1f;
 			float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
 
 			// accelerate or decelerate to target speed
-			if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
+			if (_currentHorizontalSpeed < targetSpeed - speedOffset || _currentHorizontalSpeed > targetSpeed + speedOffset)
 			{
 				// creates curved result rather than a linear one giving a more organic speed change
 				// note T in Lerp is clamped, so we don't need to clamp our speed
-				_speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
+				_speed = Mathf.Lerp(_currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
 
 				// round speed to 3 decimal places
 				_speed = Mathf.Round(_speed * 1000f) / 1000f;
@@ -201,10 +257,14 @@ namespace StarterAssets
 			{
 				// move
 				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
+				Debug.Log(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 			}
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
+			// count down dash cooldown
+			_dashTimeoutDelta -= Time.deltaTime; 
 		}
 
 		private void JumpAndGravity()
@@ -257,15 +317,17 @@ namespace StarterAssets
 
 		private void Glitch()
         {
-			_glitchTimeoutDelta -= Time.deltaTime;
-
 			if (_input.glitch && _glitchTimeoutDelta <= 0.0f)
 			{
 				Debug.Log("Glitched");
-				_input.glitch = false;
+				Vector3 glitchDirection = transform.TransformDirection(Vector3.forward).normalized;
+				_controller.Move(glitchDirection * GlitchDistance);
 				_glitchTimeoutDelta = GlitchTimeout;
 			}
-        }
+
+			_glitchTimeoutDelta -= Time.deltaTime;
+			_input.glitch = false;
+		}
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
