@@ -33,7 +33,7 @@ public class PlayerInteractableDetector : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 10))
         {
-            //Debug.Log("ray hit");
+            Debug.Log("ray hit");
 
             Interactable interactable = hit.collider.GetComponent<Interactable>();
 
