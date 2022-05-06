@@ -182,13 +182,20 @@ namespace StarterAssets
 			}
 		}
 
+		//	Switches player collision layer between default and glitch dimension
+		private void SetLayer(string layerName)
+        {
+			gameObject.layer = LayerMask.NameToLayer(layerName);
+			gameObject.transform.parent.gameObject.layer = LayerMask.NameToLayer(layerName);
+		}
+
 		private void SetDashMode()
         {
 			//	Put player in dash mode if dash is pressed, and cooldown is off, and is not in dash mode
 			if (_input.dash && _dashTimeoutDelta <= 0.0f && _isDashing == false)
 			{
-				Debug.Log("true");
 				_isDashing = true;
+				SetLayer("GlitchDimension");
 				_dashDurationTimeoutDelta = DashDuration;
 			}
 
@@ -197,6 +204,7 @@ namespace StarterAssets
 			{
 				//	Exit dash mode
 				_isDashing = false;
+				SetLayer("Default");
 
 				//	Start cooldown
 				_dashTimeoutDelta = DashTimeout;
