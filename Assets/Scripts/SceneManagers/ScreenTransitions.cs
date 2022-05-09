@@ -8,11 +8,8 @@ public class ScreenTransitions : MonoBehaviour
 {
     //  Editable in editor
     [SerializeField] Image BackgroundMaskImage;
-    [SerializeField] float FadeInDuration = 1;
-    [SerializeField] float FadeOutDuration = 1;
     
     //  Private, for calculating
-    [SerializeField] float timer = 0;
     bool isFadingIn = false;
     bool isFadingOut = false;
 
