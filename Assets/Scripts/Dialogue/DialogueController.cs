@@ -18,7 +18,7 @@ public class DialogueController : MonoBehaviour
     public Dialogues dialogues;
     private bool textFinished;
     private bool isFinished = true;
-    private bool canSkip;
+    private bool canSkip = true;
 
     public UnityEvent onFinished;
     public UnityEvent onStarted;
@@ -34,7 +34,7 @@ public class DialogueController : MonoBehaviour
         text.onTrigger.AddListener(OnTextTrigger);
         text.onFinished.AddListener(OnTextFinished);
 
-        PlayTree("init");
+        //PlayTree("init");
     }
 
     public void SetDialogue(Dialogues dialogue)
