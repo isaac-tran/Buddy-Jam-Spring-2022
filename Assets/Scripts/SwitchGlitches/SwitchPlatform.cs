@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchPlatform : MonoBehaviour
-{
-    //reference the switch from which the platform recieves commands
+{   //reference the switch from which the platform recieves commands
     public Switch Switch;
     public BoxCollider Collision;
-    private Behaviour collision;
+    private bool isGlitched = false;
 
-    bool isGlitched = false;
-    // Update is called once per frame
     void Update()
     {
         if(Switch.switchstate != isGlitched)
@@ -24,7 +21,7 @@ public class SwitchPlatform : MonoBehaviour
                 Debug.Log("Glitched");
             }
             
-            else //i'm not sure if this check works?
+            else
             {
                 gameObject.layer = LayerMask.NameToLayer("Default");
 

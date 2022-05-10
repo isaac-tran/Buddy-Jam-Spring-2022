@@ -1446,6 +1446,7 @@ GameObject:
   - component: {fileID: 2092576066}
   - component: {fileID: 2092576065}
   - component: {fileID: 2092576070}
+  - component: {fileID: 2092576071}
   m_Layer: 0
   m_Name: Switch
   m_TagString: Untagged
@@ -1557,4 +1558,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a834fb40e796943a0090c2f6dd7f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInteractable: 0
+  isCollision: 0
   switchstate: 0
+  switchItem: {fileID: 710178505}
+--- !u!114 &2092576071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092576064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10757fbca0c3cc341aef67863c449f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRadius: 5

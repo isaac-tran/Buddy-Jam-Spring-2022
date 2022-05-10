@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
+    public bool isInteractable = false;
+    public bool isCollision = false;
     public bool switchstate = false;
     public GameObject switchItem; //this is the item that's needed to be inside the switch to activate
-    // Update is called once per frame
-    void Update()
-    {
-    
-    }
+
     //this a button-like switch
     void OnTriggerEnter(Collider collider)
     {
+        if (isCollision == false)
+        {
+            return;
+        }
+
         var COLLIDER = collider.gameObject;
 
         if (COLLIDER == switchItem)
@@ -22,13 +25,24 @@ public class Switch : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider collider)
-    {
-        var COLLIDER = collider.gameObject;
+    //void interacted() //function for when switch is interacted with(?)
+    // {
+    //     if (isInteractable == false)
+    //     {
+    //         return;
+    //     }
 
-        if (COLLIDER == switchItem)
-        {
-            switchstate = false;
-        }
-    }
+    //     switchstate = true;
+    // }
+
+
+    // void OnTriggerExit(Collider collider)
+    // {
+    //     var COLLIDER = collider.gameObject;
+
+    //     if (COLLIDER == switchItem)
+    //     {
+    //         switchstate = false;
+    //     }
+    // }
 }
