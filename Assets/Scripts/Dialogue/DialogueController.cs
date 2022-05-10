@@ -23,11 +23,29 @@ public class DialogueController : MonoBehaviour
     public UnityEvent onFinished;
     public UnityEvent onStarted;
 
+    static DialogueController _instance;
+    public static DialogueController Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<DialogueController>();
+            }
+            return _instance;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    private void Awake()
+    {
         characters = GetComponentsInChildren<DialogueCharacter>();
-        foreach(DialogueCharacter c in characters)
+        foreach (DialogueCharacter c in characters)
         {
             c.onAnimationsEnded.AddListener(OnAnimationFinished);
         }
@@ -37,13 +55,9 @@ public class DialogueController : MonoBehaviour
         //PlayTree("init");
     }
 
-    public void SetDialogue(Dialogues dialogue)
+    public void Play(Dialogues dialogue, string tree)
     {
         this.dialogues = dialogue;
-    }
-
-    public void PlayTree(string tree)
-    {
         dialogues.SetTree(tree);
         isFinished = false;
         onStarted.Invoke();
@@ -91,7 +105,7 @@ public class DialogueController : MonoBehaviour
         //if(dialogues.End)
     }
 
-    public void OnTextTrigger(string trigger)
+    public void OnTextTrigger(string trigger, bool isSkipping)
     {
         //TriggerInfo t = ParseTrigger(trigger);
 
@@ -105,15 +119,18 @@ public class DialogueController : MonoBehaviour
         switch (parameters[0])
         {
             case "Wait":
-                text.enabled = false;
-                if (parameters.Length > 1)
+                if (!isSkipping)
                 {
-                    // Error handling?
-                    StartCoroutine(EnableText(float.Parse(parameters[1])));
-                }
-                else
-                {
-                    isTriggerWaitingForAnims = true;
+                    text.enabled = false;
+                    if (parameters.Length > 1)
+                    {
+                        // Error handling?
+                        StartCoroutine(EnableText(float.Parse(parameters[1])));
+                    }
+                    else
+                    {
+                        isTriggerWaitingForAnims = true;
+                    }
                 }
                 break;
 
@@ -149,8 +166,7 @@ public class DialogueController : MonoBehaviour
                 character = Array.Find(characters, c => c.characterKey == parameters[0]);
                 if(character != null && parameters.Length > 1)
                 {
-                    character.Play(parameters[1]);
-                    animCount++;
+                    character.Play(parameters[1], isSkipping);
                 }
                 break;
         }
@@ -165,9 +181,10 @@ public class DialogueController : MonoBehaviour
     public void OnAnimationFinished()
     {
         animCount--;
-        if(isTriggerWaitingForAnims && animCount == 0)
+        if(isTriggerWaitingForAnims && animCount <= 0)
         {
             text.enabled = true;
+            animCount = 0;
         }
     }
 
