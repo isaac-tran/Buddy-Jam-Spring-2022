@@ -11,52 +11,107 @@ public class DialogueCharacter : MonoBehaviour
     public Color textColor;
     public Color headerColor;
     public Animator animator;
-    public SpriteInfo[] sprites;
+    public string defaultImage = "default";
 
-    [System.Serializable]
-    public struct SpriteInfo
-    {
-        [SerializeField]
-        public string name;
+    private Image portraitCurrent;
+    private Image portraitNew;
+    private static float animationSpeed = 0.1f;
+    private bool isAnimating = false;
+    private bool isSkipping = false;
 
-        [SerializeField]
-        public MonoBehaviour sprite;
-    }
+
+    private List<Image> _images = new List<Image>();
 
     private int animationCount = 0;
 
     public UnityEvent onAnimationsEnded;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        foreach (Transform child in transform)
+        {
+            var img = child.GetComponent<Image>();
+            if (img)
+            {
+                _images.Add(img);
+                if (img.name == defaultImage)
+                {
+                    portraitCurrent = img;
+                    portraitNew = img;
+                }
+                else
+                {
+                    img.enabled = false;
+                }
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    IEnumerator DisableOldPortrait(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if(isAnimating)
+        {
+            Debug.Log("is animating " + portraitCurrent.name + " " + portraitNew.name);
+            portraitCurrent.enabled = false;
+            portraitCurrent = portraitNew;
+            isAnimating = false;
+        }
     }
 
     public void setPortrait(string name)
     {
-        foreach (SpriteInfo s in sprites)
+        if (name != portraitCurrent.name)
         {
-            if (s.name == name)
+            foreach (Image img in _images)
             {
-                s.sprite.enabled = true;
-            }
-            else
-            {
-                s.sprite.enabled = false;
+                if (img.name == name)
+                {
+                    //TODO: Change to a shader solution for crossfading, which should be more reliable when 
+
+                    if(isAnimating)
+                    {
+                        portraitCurrent.enabled = false;
+                        portraitCurrent = portraitNew;
+                        isAnimating = false;
+                    }
+                    else
+                    {
+                        isAnimating = true;
+                    }
+
+                    portraitCurrent.CrossFadeAlpha(0f, isSkipping ? 0f : animationSpeed, false);
+                    StartCoroutine(DisableOldPortrait(isSkipping ? 0f : animationSpeed));
+                    img.enabled = true;
+                    portraitNew = img;
+                    portraitNew.CrossFadeAlpha(1f, isSkipping ? 0f : animationSpeed, false);
+                    
+                }
+                else
+                {
+                    //img.enabled = false;
+                }
             }
         }
-        
     }
 
-    public void Play(string anim)
+    public void Play(string anim, bool isSkipping = false)
     {
-        animator.Play(anim);
+        this.isSkipping = isSkipping;
+        if (isSkipping)
+        {
+            animator.Play(anim, -1, 1f);
+        }
+        else
+        {
+            animator.Play(anim);
+        }
         animationCount = 1;
     }
 
@@ -66,6 +121,8 @@ public class DialogueCharacter : MonoBehaviour
         if(animationCount <= 0)
         {
             onAnimationsEnded.Invoke();
+            animationCount = 0;
+            isSkipping = false;
         }
     }
 }

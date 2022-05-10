@@ -19,12 +19,14 @@ public class TextAnimator : MonoBehaviour
 
     public bool hasFinished { get; private set; }
 
-    public UnityEvent<string> onTrigger;
+    public UnityEvent<string, bool> onTrigger;
     public UnityEvent onCharacter;
     public UnityEvent onFinished;
     public bool skipSpace;
     public float waitAfterNewline;
     public float waitAfterSentence;
+
+    private int characterToSkip = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -63,10 +65,14 @@ public class TextAnimator : MonoBehaviour
 
     public void Skip(int position, bool skipCharacterEvents = false, bool skipTriggerEvents = false)
     {
+        characterToSkip = position - charCount;
+        /*
         while (charCount < position)
         {
-            RevealNext(skipCharacterEvents, skipTriggerEvents);
+            RevealNext(skipCharacterEvents, skipTriggerEvents, true);
         }
+        */
+
     }
 
     public void Restart()
@@ -81,11 +87,12 @@ public class TextAnimator : MonoBehaviour
         textMesh.text = "";
         time = 0f;
         charCount = -1;
+        characterToSkip = 0;
         hasFinished = true;
 
     }
 
-    private void RevealNext(bool skipCharacterEvents = false,  bool skipTriggerEvents = false)
+    private void RevealNext(bool skipCharacterEvents = false,  bool skipTriggerEvents = false, bool isSkipping = false)
     {
         charCount++;
         if(charCount >= text.Length)
@@ -112,7 +119,7 @@ public class TextAnimator : MonoBehaviour
                     triggerLength = text.Length - triggerStartIndex;
 
                 if(!skipTriggerEvents)
-                    onTrigger.Invoke(text.Substring(triggerStartIndex + 1, triggerLength - 1));
+                    onTrigger.Invoke(text.Substring(triggerStartIndex + 1, triggerLength - 1), isSkipping);
 
                 charCount += triggerLength;
                 //RevealNext();
@@ -156,11 +163,19 @@ public class TextAnimator : MonoBehaviour
 
         if (!hasFinished)
         {
-            time += Time.deltaTime * CharactersPerSecond;
-            if (time > 1f)
+            if(characterToSkip > 0)
             {
-                time -= 1f;
-                RevealNext();
+                characterToSkip -= 1;
+                RevealNext(true, false, true);
+            }
+            else
+            {
+                time += Time.deltaTime * CharactersPerSecond;
+                if (time > 1f)
+                {
+                    time -= 1f;
+                    RevealNext();
+                }
             }
         }
 
