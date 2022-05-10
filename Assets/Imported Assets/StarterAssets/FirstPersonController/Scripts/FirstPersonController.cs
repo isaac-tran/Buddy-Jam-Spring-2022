@@ -89,6 +89,11 @@ namespace StarterAssets
 		[SerializeField] private float _dashTimeoutDelta;
 		[SerializeField] private float _dashDurationTimeoutDelta;
 
+		//	interaction check
+		private bool _isInteracting = false;
+		[SerializeField] private PlayerInteractableDetector _playerInteractableDetector;
+
+		//	movement mechanics
 		private float _currentHorizontalSpeed;
 
 
@@ -121,6 +126,8 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
+
+			_playerInteractableDetector = gameObject.transform.parent.GetComponent<PlayerInteractableDetector>();
 		}
 
 		private void Start()
@@ -150,6 +157,8 @@ namespace StarterAssets
 			Glitch();
 			Move();
 			CountdownDashModeTimer();
+
+			Interact();
 		}
 
 		private void LateUpdate()
@@ -186,6 +195,7 @@ namespace StarterAssets
 			}
 		}
 
+		//	==============	MOVEMENT MECHANICS =================
 		//	Switches player collision layer between default and glitch dimension
 		private void SetLayer(string layerName)
         {
@@ -353,6 +363,24 @@ namespace StarterAssets
 			if (lfAngle > 360f) lfAngle -= 360f;
 			return Mathf.Clamp(lfAngle, lfMin, lfMax);
 		}
+
+		//	==============	INTERACTION MECHANICS =================
+		private void Interact()
+        {
+			if (_input.interact && _isInteracting == false)
+            {
+				//	Set player in interaction mode, this is to prevent the player from interacting with 2 objects at the same time
+				_isInteracting = true;
+
+				Interactable detectedInteractable = _playerInteractableDetector.DetectedInteractable;
+				if (detectedInteractable != null)
+					_playerInteractableDetector.DetectedInteractable.Interact();
+
+				_isInteracting = false;
+            }
+
+			_input.interact = false;
+        }
 
 		private void OnDrawGizmosSelected()
 		{

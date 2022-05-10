@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public float interactionRadius = 5f;
+    private float interactionRadius = 5f;
+
+    public float InteractionRadius
+    {
+        get { return interactionRadius; }
+    }
+
+    //  To be overridden
+    public virtual void Interact()
+    {
+        Debug.Log("Interacted. Within " + interactionRadius + " unit radius");
+    }
 
     private void OnDrawGizmosSelected()
     {
