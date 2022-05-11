@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6103844609516298652}
   - component: {fileID: 6103844609516298653}
   - component: {fileID: 6103844609516298641}
-  - component: {fileID: 6103844609516298640}
   - component: {fileID: 6103844609516298647}
   m_Layer: 5
   m_Name: Canvas
@@ -120,141 +119,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 6103844609516298647}
   header: {fileID: 6103844609359269206}
-  dialogues: {fileID: 6103844609516298640}
+  dialogues: {fileID: 0}
   onFinished:
     m_PersistentCalls:
       m_Calls: []
   onStarted:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6103844609516298640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6103844609516298654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Set:
-  - CurrentId: 12
-    NewWindowOpen: 0
-    FirstWindow: 0
-    Windows:
-    - ID: 0
-      Size:
-        serializedVersion: 2
-        x: 305
-        y: 207
-        width: 150
-        height: 125
-      Text: '@bg fullOpaque
-
-        @dialog fadeIn
-
-        @Wait
-
-        @Koro
-        intro_left
-
-        @Wait 5
-
-        ...
-
-        @Wait 3
-
-        ...
-
-        @Wait
-        4
-
-        @Wait'
-      Type: 0
-      NodeType: 0
-      Parent: -1
-      Trigger: 0
-      TriggerText: 
-      Connections: 01000000
-    - ID: 1
-      Size:
-        serializedVersion: 2
-        x: 465
-        y: 207
-        width: 150
-        height: 125
-      Text: '!!!!!!!!!!!!'
-      Type: 0
-      NodeType: 1
-      Parent: 0
-      Trigger: 0
-      TriggerText: 
-      Connections: 02000000
-    - ID: 2
-      Size:
-        serializedVersion: 2
-        x: 625
-        y: 207
-        width: 150
-        height: 125
-      Text: '@Koro happy
-
-        Hi!
-
-        @Wait
-
-        @WaitInput
-
-        I''m
-        Koro! Nice to meet you!
-
-        @SetName Koro Koro'
-      Type: 0
-      NodeType: 1
-      Parent: 1
-      Trigger: 1
-      TriggerText: Koro
-      Connections: 03000000
-    - ID: 3
-      Size:
-        serializedVersion: 2
-        x: 785
-        y: 207
-        width: 150
-        height: 125
-      Text: '@Koro default
-
-        I''m currently just a placeholder, but I hope
-        we can get along for now!'
-      Type: 0
-      NodeType: 1
-      Parent: 2
-      Trigger: 1
-      TriggerText: Koro
-      Connections: 0b000000
-    - ID: 11
-      Size:
-        serializedVersion: 2
-        x: 945
-        y: 207
-        width: 150
-        height: 125
-      Text: '@bg fadeOut
-
-        @dialog fadeOut
-
-        @Koro fadeOut'
-      Type: 0
-      NodeType: 2
-      Parent: 3
-      Trigger: 0
-      TriggerText: 
-      Connections: 
-  CurrentSet: 0
-  TabList:
-  - init
 --- !u!114 &6103844609516298647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 6103844609296489869}
-  CharactersPerSecond: 20
+  CharactersPerSecond: 60
   onTrigger:
     m_PersistentCalls:
       m_Calls: []
@@ -376,7 +247,7 @@ MonoBehaviour:
   textColor: {r: 0, g: 0, b: 0, a: 1}
   headerColor: {r: 0, g: 0, b: 0, a: 1}
   animator: {fileID: 6103844609523588616}
-  sprites: []
+  defaultImage: default
   onAnimationsEnded:
     m_PersistentCalls:
       m_Calls: []
@@ -414,48 +285,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
         type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
-        type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
         type: 3}
@@ -490,16 +321,6 @@ PrefabInstance:
     - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
@@ -559,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 2845194611411799450, guid: 65887c53f62c7d0408b7cb3a10285af5,
         type: 3}
       propertyPath: m_Name
-      value: Koro
+      value: Anastasia
       objectReference: {fileID: 0}
     - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
         type: 3}
@@ -575,36 +396,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -460.67682
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -354.0825
       objectReference: {fileID: 0}
     - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
         type: 3}
@@ -640,16 +431,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2845194611411799453, guid: 65887c53f62c7d0408b7cb3a10285af5,
         type: 3}

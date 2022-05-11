@@ -7,16 +7,18 @@ public class PlayerInteractableDetector : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     Vector2 cameraCenterPoint;
 
+    [SerializeField] private float INTERACTION_DETECTION_RADIUS = 15f;  //  Detection, but has to be in range of the objects themselves to interact with
+    Interactable detectedInteractable;
+
+    public Interactable DetectedInteractable
+    {
+        get { return detectedInteractable; }
+    }
+
     private void Awake()
     {
         //cameraCenterPoint = new Vector2(playerCamera.pixelWidth / 2, playerCamera.pixelHeight / 2);
         cameraCenterPoint = new Vector2(Screen.width / 2, Screen.height / 2);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
     }
 
     // Update is called once per frame
@@ -31,15 +33,21 @@ public class PlayerInteractableDetector : MonoBehaviour
         Ray ray = playerCamera.ScreenPointToRay(cameraCenterPoint);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 5))
+        if (Physics.Raycast(ray, out hit, INTERACTION_DETECTION_RADIUS))
         {
-            Debug.Log("ray hit");
+            detectedInteractable = hit.collider.GetComponent<Interactable>();
 
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
-
-            if (interactable != null)
+            //  Debug
+            if (detectedInteractable != null)
             {
-                Debug.Log("Interactable name: " + interactable.gameObject.name);
+                float distanceBetweenPlayerAndInteractable = (detectedInteractable.gameObject.transform.position - transform.position).magnitude;
+
+                Debug.Log(detectedInteractable.InteractionRadius + " " + distanceBetweenPlayerAndInteractable);
+
+                if (detectedInteractable.InteractionRadius > distanceBetweenPlayerAndInteractable)
+                    Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", NOT within interaction radius.");
+                else
+                    Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", within interaction radius.");
             }
         }
     }

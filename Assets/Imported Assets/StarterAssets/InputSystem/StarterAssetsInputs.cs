@@ -14,6 +14,7 @@ namespace StarterAssets
 		public bool sprint;
 		public bool glitch;
 		public bool dash;
+		public bool interact;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -55,6 +56,11 @@ namespace StarterAssets
         {
 			DashInput(value.isPressed);
         }
+
+		public void OnInteract(InputValue value)
+        {
+			InteractInput(value.isPressed);
+        }
 #endif
 
 		public void MoveInput(Vector2 newMoveDirection)
@@ -85,6 +91,11 @@ namespace StarterAssets
 		public void DashInput(bool newDashState)
         {
 			dash = newDashState; 
+        }
+
+		public void InteractInput(bool newInteractState)
+        {
+			interact = newInteractState;
         }
 		
 		private void OnApplicationFocus(bool hasFocus)

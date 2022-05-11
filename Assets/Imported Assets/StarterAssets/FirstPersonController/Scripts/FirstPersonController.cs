@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -48,8 +50,10 @@ namespace StarterAssets
 		public float GlitchDistance = 5f;
 		[Tooltip("Cooldown between glitches")]
 		public float GlitchTimeout = 5f;
+        [Tooltip("Time that the player is in Glitch Dimension when glitching forward")]
+        public float GlitchDimensionTime = 0.3f;
 
-		[Header("Dash Mechanic")]
+        [Header("Dash Mechanic")]
 		[Tooltip("Player will move at this speed instead while dashing.")]
 		public float DashSpeed = 50f;
 		[Tooltip("Duration of the dash, speed will change back to 0 or moving or sprinting speed.")]
@@ -85,6 +89,11 @@ namespace StarterAssets
 		[SerializeField] private float _dashTimeoutDelta;
 		[SerializeField] private float _dashDurationTimeoutDelta;
 
+		//	interaction check
+		private bool _isInteracting = false;
+		[SerializeField] private PlayerInteractableDetector _playerInteractableDetector;
+
+		//	movement mechanics
 		private float _currentHorizontalSpeed;
 
 
@@ -117,6 +126,8 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
+
+			_playerInteractableDetector = gameObject.transform.parent.GetComponent<PlayerInteractableDetector>();
 		}
 
 		private void Start()
@@ -146,6 +157,8 @@ namespace StarterAssets
 			Glitch();
 			Move();
 			CountdownDashModeTimer();
+
+			Interact();
 		}
 
 		private void LateUpdate()
@@ -182,6 +195,7 @@ namespace StarterAssets
 			}
 		}
 
+		//	==============	MOVEMENT MECHANICS =================
 		//	Switches player collision layer between default and glitch dimension
 		private void SetLayer(string layerName)
         {
@@ -204,7 +218,7 @@ namespace StarterAssets
 			{
 				//	Exit dash mode
 				_isDashing = false;
-				SetLayer("Default");
+				SetLayer("Player");
 
 				//	Start cooldown
 				_dashTimeoutDelta = DashTimeout;
@@ -214,7 +228,7 @@ namespace StarterAssets
 			_input.dash = false;
 		}
 
-		private void CountdownDashModeTimer()
+        private void CountdownDashModeTimer()
         {
 			_dashTimeoutDelta -= Time.deltaTime;
 			_dashDurationTimeoutDelta -= Time.deltaTime;
@@ -322,14 +336,22 @@ namespace StarterAssets
 			}
 		}
 
-		private void Glitch()
+        private IEnumerator ResetLayerDelayed(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            SetLayer("Player");
+        }
+
+        private void Glitch()
         {
 			if (_input.glitch && _glitchTimeoutDelta <= 0.0f)
 			{
-				Vector3 glitchDirection = transform.TransformDirection(Vector3.forward).normalized;
+				Vector3 glitchDirection = Camera.main.transform.TransformDirection(Vector3.forward).normalized;
 				_controller.Move(glitchDirection * GlitchDistance);
 				_glitchTimeoutDelta = GlitchTimeout;
-			}
+                SetLayer("GlitchDimension");
+                StartCoroutine(ResetLayerDelayed(GlitchDimensionTime));
+            }
 
 			_glitchTimeoutDelta -= Time.deltaTime;
 			_input.glitch = false;
@@ -341,6 +363,24 @@ namespace StarterAssets
 			if (lfAngle > 360f) lfAngle -= 360f;
 			return Mathf.Clamp(lfAngle, lfMin, lfMax);
 		}
+
+		//	==============	INTERACTION MECHANICS =================
+		private void Interact()
+        {
+			if (_input.interact && _isInteracting == false)
+            {
+				//	Set player in interaction mode, this is to prevent the player from interacting with 2 objects at the same time
+				_isInteracting = true;
+
+				Interactable detectedInteractable = _playerInteractableDetector.DetectedInteractable;
+				if (detectedInteractable != null)
+					_playerInteractableDetector.DetectedInteractable.Interact();
+
+				_isInteracting = false;
+            }
+
+			_input.interact = false;
+        }
 
 		private void OnDrawGizmosSelected()
 		{
