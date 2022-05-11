@@ -15,7 +15,7 @@ public class RespawnPoint : MonoBehaviour
         //position which player respawns at, position of the "RespawnPosition" GameObject
         Vector3 exactRespawnPosition = transform.GetChild(0).gameObject.transform.position;
         
-        Player.GetComponent<RespawnManager>().PlayerHasEnterdRespawnPoint(exactRespawnPosition);
+        Player.transform.GetChild(2).GetComponent<RespawnManager>().PlayerHasEnterdRespawnPoint(exactRespawnPosition);
         }
     }
 }
