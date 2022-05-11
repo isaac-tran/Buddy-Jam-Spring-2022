@@ -38,17 +38,17 @@ public class PlayerInteractableDetector : MonoBehaviour
             detectedInteractable = hit.collider.GetComponent<Interactable>();
 
             //  Debug
-            if (detectedInteractable != null)
-            {
-                float distanceBetweenPlayerAndInteractable = (detectedInteractable.gameObject.transform.position - transform.position).magnitude;
+            // if (detectedInteractable != null)
+            // {
+            //     float distanceBetweenPlayerAndInteractable = (detectedInteractable.gameObject.transform.position - transform.position).magnitude;
 
-                Debug.Log(detectedInteractable.InteractionRadius + " " + distanceBetweenPlayerAndInteractable);
+            //     Debug.Log(detectedInteractable.InteractionRadius + " " + distanceBetweenPlayerAndInteractable);
 
-                if (detectedInteractable.InteractionRadius > distanceBetweenPlayerAndInteractable)
-                    Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", NOT within interaction radius.");
-                else
-                    Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", within interaction radius.");
-            }
+            //     if (detectedInteractable.InteractionRadius > distanceBetweenPlayerAndInteractable)
+            //         Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", NOT within interaction radius.");
+            //     else
+            //         Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", within interaction radius.");
+            // }
         }
     }
 }

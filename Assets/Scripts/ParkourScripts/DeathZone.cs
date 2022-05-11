@@ -13,7 +13,7 @@ public class DeathZone : MonoBehaviour
         if(COLLIDER == "Player")
         {
             //signal the RespwanManager to return to last checkpoint
-            Player.GetComponent<RespawnManager>().PlayerHasEnterdDeathZone();
+            Player.transform.GetChild(2).GetComponent<RespawnManager>().PlayerHasEnterdDeathZone();
         }
         
     }
