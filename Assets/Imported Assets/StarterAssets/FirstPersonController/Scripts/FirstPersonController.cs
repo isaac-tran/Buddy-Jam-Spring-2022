@@ -96,6 +96,10 @@ namespace StarterAssets
 		//	movement mechanics
 		private float _currentHorizontalSpeed;
 
+		//  pause menu
+
+		[SerializeField] PauseMenu _pauseMenu;
+
 
 	
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -159,6 +163,8 @@ namespace StarterAssets
 			CountdownDashModeTimer();
 
 			Interact();
+
+			Pause();
 		}
 
 		private void LateUpdate()
@@ -381,6 +387,16 @@ namespace StarterAssets
 
 			_input.interact = false;
         }
+
+		private void Pause()
+		{
+			if (_input.pause)
+			{
+				_pauseMenu.changePauseState();
+			}
+
+			_input.pause = false;
+		}
 
 		private void OnDrawGizmosSelected()
 		{
