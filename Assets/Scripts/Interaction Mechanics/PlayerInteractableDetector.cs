@@ -1,14 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteractableDetector : MonoBehaviour
 {
+    //  Player
+    [SerializeField] private GameObject playerModel;
+
+    //  Camera
     [SerializeField] private Camera playerCamera;
     Vector2 cameraCenterPoint;
 
+    //  Interaction
     [SerializeField] private float INTERACTION_DETECTION_RADIUS = 15f;  //  Detection, but has to be in range of the objects themselves to interact with
     Interactable detectedInteractable;
+
+    //  UI elements
+    [SerializeField] private InteractableNameLabel interactableNameLabel;
+
 
     public Interactable DetectedInteractable
     {
@@ -38,17 +48,26 @@ public class PlayerInteractableDetector : MonoBehaviour
             detectedInteractable = hit.collider.GetComponent<Interactable>();
 
             //  Debug
-            // if (detectedInteractable != null)
-            // {
-            //     float distanceBetweenPlayerAndInteractable = (detectedInteractable.gameObject.transform.position - transform.position).magnitude;
+            if (detectedInteractable != null)
+            {
+                float distanceBetweenPlayerAndInteractable = Vector3.Distance(detectedInteractable.transform.position, playerModel.transform.position);
+                //Debug.Log(detectedInteractable.InteractionRadius + " " + distanceBetweenPlayerAndInteractable);
 
-            //     Debug.Log(detectedInteractable.InteractionRadius + " " + distanceBetweenPlayerAndInteractable);
-
-            //     if (detectedInteractable.InteractionRadius > distanceBetweenPlayerAndInteractable)
-            //         Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", NOT within interaction radius.");
-            //     else
-            //         Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", within interaction radius.");
-            // }
+                if (detectedInteractable.InteractionRadius > distanceBetweenPlayerAndInteractable)
+                {
+                    interactableNameLabel.Appear(detectedInteractable);
+                    //Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", NOT within interaction radius.");
+                }
+                else
+                {
+                    interactableNameLabel.Disappear();
+                    //Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", within interaction radius.");
+                }
+            }
+            else
+                interactableNameLabel.Disappear();
         }
+        else
+            interactableNameLabel.Disappear();
     }
 }
