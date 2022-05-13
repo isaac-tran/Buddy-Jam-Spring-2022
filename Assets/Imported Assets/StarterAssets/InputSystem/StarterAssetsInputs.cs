@@ -16,10 +16,6 @@ namespace StarterAssets
 		public bool dash;
 		public bool interact;
 
-		[Header("UI Input Values")]
-		public bool pause;
-		[SerializeField] private PauseMenu _pauseMenu;
-
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -35,13 +31,9 @@ namespace StarterAssets
 
 		public void OnLook(InputValue value)
 		{
-			if(cursorInputForLook && _pauseMenu.isPaused == false)
+			if(cursorInputForLook)
 			{
 				LookInput(value.Get<Vector2>());
-			}
-			else
-			{
-				look = Vector2.zero;
 			}
 		}
 
@@ -69,11 +61,6 @@ namespace StarterAssets
         {
 			InteractInput(value.isPressed);
         }
-
-		public void OnPause(InputValue value)
-		{
-			PauseInput(value.isPressed);
-		}
 #endif
 
 		public void MoveInput(Vector2 newMoveDirection)
@@ -110,18 +97,10 @@ namespace StarterAssets
         {
 			interact = newInteractState;
         }
-
-		public void PauseInput(bool newPauseState)
-		{
-			pause = newPauseState;
-		}
 		
 		private void OnApplicationFocus(bool hasFocus)
 		{
-			if(_pauseMenu.isPaused == false)
-			{
 			SetCursorState(cursorLocked);
-			}
 		}
 
 		private void SetCursorState(bool newState)
