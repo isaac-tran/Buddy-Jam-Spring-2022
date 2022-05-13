@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject quitWarning;
     public bool isPaused = false;
 
     public void changePauseState()
@@ -36,11 +37,18 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void quit(int SceneID)
+    public void quit()
     {
-        Time.timeScale = 1f;
-        isPaused = false;
-        pauseMenu.SetActive(false);
+        quitWarning.SetActive(true);
+    }
+
+    public void quitForReal(int SceneID)
+    {
         SceneManager.LoadScene(SceneID);
+    }
+
+    public void cancelQuit()
+    {
+        quitWarning.SetActive(false);
     }
 }
