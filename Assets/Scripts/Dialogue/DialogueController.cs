@@ -55,6 +55,8 @@ public class DialogueController : MonoBehaviour
         //PlayTree("init");
     }
 
+    public bool IsFinished() { return textFinished; }
+
     public void Play(Dialogues dialogue, string tree)
     {
         this.dialogues = dialogue;
