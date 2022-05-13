@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    [SerializeField] private string displayName;
     public bool Interacted = false;
-    private float interactionRadius = 5f;
+    [SerializeField] private float interactionRadius = 5f;
+
+    public string DisplayName
+    {
+        get { return displayName; }
+        set { displayName = value; }
+    }
 
     public float InteractionRadius
     {
