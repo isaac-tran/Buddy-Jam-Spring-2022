@@ -8,6 +8,7 @@ public class ScreenTransitions : MonoBehaviour
 {
     //  Editable in editor
     [SerializeField] Image BackgroundMaskImage;
+    [SerializeField] UIAnimations UIAnimations;
     
     //  Private, for calculating
     bool isFadingIn = false;
@@ -21,56 +22,49 @@ public class ScreenTransitions : MonoBehaviour
 
         isFadingIn = true;
 
-        Color bgMaskColor = BackgroundMaskImage.color;
-        int totalFrames = Mathf.RoundToInt(durationInSeconds / Time.deltaTime);
+        CanvasGroup bgMaskCanvasGroup = BackgroundMaskImage.GetComponent<CanvasGroup>();
+        float timer = 0f;
 
-        for (int currentFrame = 0; currentFrame <= totalFrames; currentFrame++)
+        for (timer = 0f; timer <= durationInSeconds; timer += Time.deltaTime)
         {
-            float t = (float) currentFrame / (float) totalFrames;
+            float t = timer / durationInSeconds;
+            Debug.Log("FPS: " + 1f / Time.fixedDeltaTime);
+            Debug.Log(timer + " " + durationInSeconds);
 
             //  0 is transparent, 1 is unique. Fade in = black -> transparent
-            Color nextMaskImageColor = new Color(
-                bgMaskColor.r,
-                bgMaskColor.g,
-                bgMaskColor.b,
-                Mathf.Lerp(1, 0, t)
-            );
+            bgMaskCanvasGroup.alpha = Mathf.Lerp(1, 0, t);
 
-            BackgroundMaskImage.color = nextMaskImageColor;
-
-            yield return null; 
+            yield return new WaitForEndOfFrame(); 
         }
 
+        BackgroundMaskImage.enabled = false;
         isFadingIn = false;
         yield return null;
     }
 
     public IEnumerator FadeOut(float durationInSeconds)
     {
+        BackgroundMaskImage.enabled = true;
+
         //  If screen is in the process of fading out -> do not do fade in
         if (isFadingIn)
             yield break;
 
         isFadingOut = true;
 
-        Color bgMaskColor = BackgroundMaskImage.color;
-        int totalFrames = Mathf.RoundToInt(durationInSeconds / Time.deltaTime);
+        CanvasGroup bgMaskCanvasGroup = BackgroundMaskImage.GetComponent<CanvasGroup>();
+        float timer = 0f;
 
-        for (int currentFrame = 0; currentFrame <= totalFrames; currentFrame++)
+        for (timer = 0f; timer <= durationInSeconds; timer += Time.deltaTime)
         {
-            float t = (float)currentFrame / (float)totalFrames;
+            float t = timer / durationInSeconds;
+            Debug.Log("FPS: " + 1f / Time.fixedDeltaTime);
+            Debug.Log(timer + " " + durationInSeconds);
 
             //  0 is transparent, 1 is unique. Fade out = transparent -> black
-            Color nextMaskImageColor = new Color(
-                bgMaskColor.r,
-                bgMaskColor.g,
-                bgMaskColor.b,
-                Mathf.Lerp(0, 1, t)
-            );
+            bgMaskCanvasGroup.alpha = Mathf.Lerp(0, 1, t);
 
-            BackgroundMaskImage.color = nextMaskImageColor;
-
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
 
         isFadingOut = false;
