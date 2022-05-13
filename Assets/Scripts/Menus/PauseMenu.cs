@@ -36,8 +36,11 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void quit()
+    public void quit(int SceneID)
     {
-        Debug.Log("Quited");
+        Time.timeScale = 1f;
+        isPaused = false;
+        pauseMenu.SetActive(false);
+        SceneManager.LoadScene(SceneID);
     }
 }
