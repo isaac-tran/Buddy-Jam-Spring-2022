@@ -14,6 +14,9 @@ public class Level1GameManager : MonoBehaviour
 
     //  Riddle 1
     [SerializeField] private bool key1 = false, key2 = false, key3 = false;
+    public bool Key1 { get { return key1; } }
+    public bool Key2 { get { return key2; } }
+    public bool Key3 { get { return key3; } }
 
     private void Awake()
     {
