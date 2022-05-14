@@ -28,8 +28,6 @@ public class ScreenTransitions : MonoBehaviour
         for (timer = 0f; timer <= durationInSeconds; timer += Time.deltaTime)
         {
             float t = timer / durationInSeconds;
-            Debug.Log("FPS: " + 1f / Time.fixedDeltaTime);
-            Debug.Log(timer + " " + durationInSeconds);
 
             //  0 is transparent, 1 is unique. Fade in = black -> transparent
             bgMaskCanvasGroup.alpha = Mathf.Lerp(1, 0, t);

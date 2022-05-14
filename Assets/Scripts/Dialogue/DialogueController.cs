@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class DialogueController : MonoBehaviour
 {
+    public StarterAssets.FirstPersonController playerController;
 
     public TextAnimator text;
     public TextMeshProUGUI header;
@@ -59,6 +60,8 @@ public class DialogueController : MonoBehaviour
 
     public void Play(Dialogues dialogue, string tree)
     {
+        playerController.DisableController();
+
         this.dialogues = dialogue;
         dialogues.SetTree(tree);
         isFinished = false;
@@ -210,6 +213,10 @@ public class DialogueController : MonoBehaviour
                 // TODO: Handle Choices
                 if(dialogues.End())
                 {
+                    Debug.Log("dialogues ended");
+
+                    StartCoroutine(playerController.DelayedEnableController());
+
                     // TODO: Enable Player Input
                     // TODO: Refactor:
                     // "DialogCharacter should be somewhing like DialogEntity ot something
