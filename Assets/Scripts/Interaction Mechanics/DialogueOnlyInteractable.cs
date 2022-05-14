@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Interactable))]
 [RequireComponent(typeof(Dialogues))]
 [RequireComponent(typeof(DialogueTrigger))]
-public class Book : Interactable
+public class DialogueOnlyInteractable : Interactable
 {
     Interactable interactable;
     Dialogues dialogues;
