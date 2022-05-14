@@ -39,22 +39,27 @@ public class PlayerInteractableDetector : MonoBehaviour
 
     void DetectInteractable()
     {
+        Interactable placeholderInteractable;
+        detectedInteractable = null;
+
         //  Cast a ray from camera to centre point of the screen
         Ray ray = playerCamera.ScreenPointToRay(cameraCenterPoint);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, INTERACTION_DETECTION_RADIUS))
         {
-            detectedInteractable = hit.collider.GetComponent<Interactable>();
+            placeholderInteractable = hit.collider.GetComponent<Interactable>();
 
             //  Debug
-            if (detectedInteractable != null)
+            if (placeholderInteractable != null)
             {
-                float distanceBetweenPlayerAndInteractable = Vector3.Distance(detectedInteractable.transform.position, playerModel.transform.position);
+                float distanceBetweenPlayerAndInteractable = Vector3.Distance(placeholderInteractable.transform.position, playerModel.transform.position);
                 //Debug.Log(detectedInteractable.InteractionRadius + " " + distanceBetweenPlayerAndInteractable);
 
-                if (detectedInteractable.InteractionRadius > distanceBetweenPlayerAndInteractable)
+                if (placeholderInteractable.InteractionRadius > distanceBetweenPlayerAndInteractable)
                 {
+                    //  Pass this interactable into the detectedInteractable property, so other classes can use it
+                    detectedInteractable = placeholderInteractable;
                     interactableNameLabel.Appear(detectedInteractable);
                     //Debug.Log("Interactable name: " + detectedInteractable.gameObject.name + ", NOT within interaction radius.");
                 }

@@ -13,6 +13,7 @@ namespace StarterAssets
 #endif
 	public class FirstPersonController : MonoBehaviour
 	{
+		[Space(10)]
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 4.0f;
@@ -96,6 +97,20 @@ namespace StarterAssets
 		//	movement mechanics
 		private float _currentHorizontalSpeed;
 
+		//	Lock/unlock player input
+		[SerializeField] private bool playerMovementEnabled = true;
+		[SerializeField] private bool playerInteractEnabled = true;
+		public bool PlayerMovementEnabled
+        {
+			get { return playerMovementEnabled; }
+			set { playerMovementEnabled = value; }
+        }
+		public bool PlayerInteractEnabled
+        {
+			get { return playerInteractEnabled; }
+			set { PlayerInteractEnabled = value; }	
+        }
+
 
 	
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -150,12 +165,16 @@ namespace StarterAssets
 			// a reference to the players current horizontal velocity
 			_currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 
-			JumpAndGravity();
-			GroundedCheck();
+			if (playerMovementEnabled)
+			{
+				JumpAndGravity();
+				GroundedCheck();
 
-			SetDashMode();
-			Glitch();
-			Move();
+				SetDashMode();
+				Glitch();
+				Move();
+			}
+
 			CountdownDashModeTimer();
 
 			Interact();
@@ -176,7 +195,7 @@ namespace StarterAssets
 		private void CameraRotation()
 		{
 			// if there is an input
-			if (_input.look.sqrMagnitude >= _threshold)
+			if (_input.look.sqrMagnitude >= _threshold && playerMovementEnabled)
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
@@ -367,19 +386,34 @@ namespace StarterAssets
 		//	==============	INTERACTION MECHANICS =================
 		private void Interact()
         {
-			if (_input.interact && _isInteracting == false)
+			if (_input.interact && playerInteractEnabled)
             {
-				//	Set player in interaction mode, this is to prevent the player from interacting with 2 objects at the same time
-				_isInteracting = true;
-
 				Interactable detectedInteractable = _playerInteractableDetector.DetectedInteractable;
 				if (detectedInteractable != null)
-					_playerInteractableDetector.DetectedInteractable.Interact();
-
-				_isInteracting = false;
+				{
+					detectedInteractable.Interact();
+				}
             }
 
 			_input.interact = false;
+        }
+
+		public void DisableController()
+        {
+			playerInteractEnabled = false;
+			playerMovementEnabled = false;
+        }
+
+		//	Delayed player controller enabler
+		public IEnumerator DelayedEnableController()
+        {
+			playerMovementEnabled = true;
+
+			yield return new WaitForSeconds(1.5f);
+
+			playerInteractEnabled = true;
+
+			yield return null;
         }
 
 		private void OnDrawGizmosSelected()
