@@ -1238,6 +1238,444 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268370352}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &283673531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 283673532}
+  - component: {fileID: 283673535}
+  - component: {fileID: 283673534}
+  - component: {fileID: 283673533}
+  m_Layer: 0
+  m_Name: OpeningDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &283673532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283673531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261413135}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &283673533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283673531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e5d91bc79719847af68399e73bfd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoStart: 1
+  tree: Opening
+--- !u!114 &283673534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283673531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 24
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 271.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: '@bg fullOpaque
+
+        @dialog fadeIn
+
+        @Ana fadeIn
+
+        ...'
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 1
+      TriggerText: 
+      Connections: 02000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 1229.2
+        y: 582.8
+        width: 150
+        height: 125
+      Text: '@dialog fadeOut
+
+        @Ana fadeOut'
+      Type: 0
+      NodeType: 2
+      Parent: 0
+      Trigger: 1
+      TriggerText: 
+      Connections: 
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 431.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: "Wha\u2026 where am I?"
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 1
+      TriggerText: Player
+      Connections: 03000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 591.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: "Why is it so dark all of a sudden? Was I always here? Something isn\u2019t
+        right\u2026\r"
+      Type: 0
+      NodeType: 1
+      Parent: 2
+      Trigger: 1
+      TriggerText: Player
+      Connections: 04000000
+    - ID: 4
+      Size:
+        serializedVersion: 2
+        x: 751.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: "UGH! Just great\u2026\r"
+      Type: 0
+      NodeType: 1
+      Parent: 3
+      Trigger: 1
+      TriggerText: Mysterious Female Voice
+      Connections: 05000000
+    - ID: 5
+      Size:
+        serializedVersion: 2
+        x: 911.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: '...Wow. Now not only is it dark here but I''m also hearing voices. Am
+        I in reverse heaven?
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 4
+      Trigger: 1
+      TriggerText: Player
+      Connections: 06000000
+    - ID: 6
+      Size:
+        serializedVersion: 2
+        x: 1071.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: "\u2026First I got kicked out of my chamber unwillingly and now I ran
+        out places to put scratches in this damn place. Aargh! I\u2019m so done with
+        this.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 5
+      Trigger: 1
+      TriggerText: Mysterious Female Voice
+      Connections: 07000000
+    - ID: 7
+      Size:
+        serializedVersion: 2
+        x: 1231.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: Who's there?
+      Type: 0
+      NodeType: 1
+      Parent: 6
+      Trigger: 1
+      TriggerText: Player
+      Connections: 08000000
+    - ID: 8
+      Size:
+        serializedVersion: 2
+        x: 1231.2
+        y: 295.8
+        width: 150
+        height: 125
+      Text: "Well well. Look who decided to show up and ruin my parade. Honestly,
+        this day couldn\u2019t get any worse, can it?"
+      Type: 0
+      NodeType: 1
+      Parent: 7
+      Trigger: 1
+      TriggerText: Female Ghost
+      Connections: 09000000
+    - ID: 9
+      Size:
+        serializedVersion: 2
+        x: 1067.2
+        y: 296.8
+        width: 150
+        height: 125
+      Text: "Oh my god\u2026 there's a real ghost here! I'm really in reverse heaven."
+      Type: 0
+      NodeType: 1
+      Parent: 8
+      Trigger: 1
+      TriggerText: Player
+      Connections: 0a000000
+    - ID: 10
+      Size:
+        serializedVersion: 2
+        x: 908.19995
+        y: 297.8
+        width: 150
+        height: 125
+      Text: "How dare you try to insult me! \u2018The One True Demon Lord\u2019 -
+        Anastasia.\r"
+      Type: 0
+      NodeType: 1
+      Parent: 9
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 0b000000
+    - ID: 11
+      Size:
+        serializedVersion: 2
+        x: 751.19995
+        y: 295.8
+        width: 150
+        height: 125
+      Text: ...
+      Type: 0
+      NodeType: 1
+      Parent: 10
+      Trigger: 1
+      TriggerText: Player
+      Connections: 0c000000
+    - ID: 12
+      Size:
+        serializedVersion: 2
+        x: 587.19995
+        y: 295.8
+        width: 150
+        height: 125
+      Text: "Whom I\u2019m kidding, no matter what I say or do. I\u2019m still stuck
+        here with no way out.\r"
+      Type: 0
+      NodeType: 1
+      Parent: 11
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 16000000
+    - ID: 14
+      Size:
+        serializedVersion: 2
+        x: 116.19995
+        y: 291.8
+        width: 150
+        height: 125
+      Text: '@dialog fadeIn
+
+        Is this your doing?
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 13
+      Trigger: 1
+      TriggerText: Player
+      Connections: 0f000000
+    - ID: 15
+      Size:
+        serializedVersion: 2
+        x: 268.19995
+        y: 439.8
+        width: 150
+        height: 125
+      Text: "@Ana fadeIn\nOh great! Now you playing with me. No, it's not mine and
+        I don\u2019t even know what kind of magic is this anyway. All of my important
+        stuff is back in my chamber on the other side of the throne room. And I can\u2019t
+        get through.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 14
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 10000000
+    - ID: 16
+      Size:
+        serializedVersion: 2
+        x: 428.19995
+        y: 439.8
+        width: 150
+        height: 125
+      Text: Do you reckon that I can find something in your chamber that could potentially
+        lead to solving this mysterious magic problem?
+      Type: 0
+      NodeType: 1
+      Parent: 15
+      Trigger: 1
+      TriggerText: Player
+      Connections: 11000000
+    - ID: 17
+      Size:
+        serializedVersion: 2
+        x: 588.19995
+        y: 439.8
+        width: 150
+        height: 125
+      Text: "I don\u2019t know if you want to be useful for once be my guest. Although
+        I have some conditions for you, fake ghost wannabe!"
+      Type: 0
+      NodeType: 1
+      Parent: 16
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 12000000
+    - ID: 18
+      Size:
+        serializedVersion: 2
+        x: 748.19995
+        y: 439.8
+        width: 150
+        height: 125
+      Text: Excuse me!?
+      Type: 0
+      NodeType: 1
+      Parent: 17
+      Trigger: 1
+      TriggerText: Player
+      Connections: 13000000
+    - ID: 19
+      Size:
+        serializedVersion: 2
+        x: 908.19995
+        y: 439.8
+        width: 150
+        height: 125
+      Text: "Rule 1) Leave me alone. I\u2019m sick and tired of your mind games.
+        @WaitInput\nRule 2) Find something that I can write on like a book or paper
+        or whatever that\u2019s left. @WaitInput \nAnd rule 3) While you\u2019re
+        there, don\u2019t you dare go to the right in my chamber."
+      Type: 0
+      NodeType: 1
+      Parent: 18
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 14000000
+    - ID: 20
+      Size:
+        serializedVersion: 2
+        x: 1068.2
+        y: 439.8
+        width: 150
+        height: 125
+      Text: "What\u2019s in there?"
+      Type: 0
+      NodeType: 1
+      Parent: 19
+      Trigger: 1
+      TriggerText: Player
+      Connections: 15000000
+    - ID: 21
+      Size:
+        serializedVersion: 2
+        x: 1228.2
+        y: 439.8
+        width: 150
+        height: 125
+      Text: "I repeat rule 3) Don\u2019t you dare go to the right in my chamber.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 20
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 01000000
+    - ID: 22
+      Size:
+        serializedVersion: 2
+        x: 430.19995
+        y: 293.8
+        width: 150
+        height: 125
+      Text: '...
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: -2
+      Trigger: 0
+      TriggerText: 
+      Connections: 17000000
+    - ID: 23
+      Size:
+        serializedVersion: 2
+        x: 275.19995
+        y: 294.8
+        width: 150
+        height: 125
+      Text: '@Ana fadeOut
+
+        @dialog fadeOut
+
+        @bg fadeOut'
+      Type: 0
+      NodeType: 1
+      Parent: 22
+      Trigger: 0
+      TriggerText: 
+      Connections: 0e000000
+  CurrentSet: 0
+  TabList:
+  - Opening
+--- !u!65 &283673535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283673531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &284100536 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 783850947380166141, guid: 96afc58adede67c42b048057d30b7e7d,
@@ -1549,6 +1987,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6103844609050315736, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6103844609296489871, guid: f484b582ded1be84baa4f91fcaedfbfb,
         type: 3}
       propertyPath: m_Layer
@@ -1741,7 +2184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &446767306
 Transform:
   m_ObjectHideFlags: 0
@@ -1759,7 +2202,7 @@ Transform:
   - {fileID: 645542593}
   - {fileID: 571652253}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &468863410
 GameObject:
@@ -1943,119 +2386,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 488453316}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &534292853
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 534292858}
-  - component: {fileID: 534292857}
-  - component: {fileID: 534292856}
-  - component: {fileID: 534292855}
-  - component: {fileID: 534292854}
-  m_Layer: 0
-  m_Name: Interactable
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &534292854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534292853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10757fbca0c3cc341aef67863c449f44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayName: Sphere
-  Interacted: 0
-  interactionRadius: 10
---- !u!135 &534292855
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534292853}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &534292856
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534292853}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &534292857
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534292853}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &534292858
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534292853}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.45, z: 17.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &556400857
 GameObject:
   m_ObjectHideFlags: 0
@@ -3210,7 +3540,7 @@ Transform:
   - {fileID: 103416086}
   - {fileID: 1069051971}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880978408
 GameObject:
@@ -3227,7 +3557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &880978409
 Transform:
   m_ObjectHideFlags: 0
@@ -3235,14 +3565,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880978408}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 243608427}
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 1261413135}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &886562841
 GameObject:
@@ -3601,7 +3931,7 @@ Transform:
   - {fileID: 715247688}
   - {fileID: 1417176880}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1049164373
 GameObject:
@@ -3945,6 +4275,87 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132083933}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1139192091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1139192092}
+  - component: {fileID: 1139192095}
+  - component: {fileID: 1139192094}
+  - component: {fileID: 1139192093}
+  m_Layer: 0
+  m_Name: Main Story Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1139192092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139192091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261413135}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1139192093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139192091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e5d91bc79719847af68399e73bfd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoStart: 0
+  tree: 
+--- !u!114 &1139192094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139192091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 0
+    NewWindowOpen: 0
+    FirstWindow: -562
+    Windows: []
+  CurrentSet: 0
+  TabList:
+  - GiveDiaryToAnastasia
+--- !u!65 &1139192095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139192091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1154628833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4547,7 +4958,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232105569}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1329860124
+--- !u!1 &1261413134
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4555,112 +4966,32 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1329860127}
-  - component: {fileID: 1329860126}
-  - component: {fileID: 1329860125}
+  - component: {fileID: 1261413135}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: Dialogues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1329860125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329860124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
---- !u!108 &1329860126
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329860124}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 2
-  m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &1329860127
+--- !u!4 &1261413135
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329860124}
+  m_GameObject: {fileID: 1261413134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.511638, y: 2.7883618, z: 10.836824}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 283673532}
+  - {fileID: 1139192092}
+  - {fileID: 1835583851}
+  - {fileID: 880978409}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1343051879
 GameObject:
@@ -5472,7 +5803,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1580019009 stripped
 Transform:
@@ -6132,7 +6463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1835583848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6357,12 +6688,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835583847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1642.8726, y: 673.58154, z: -1.9190314}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 1261413135}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1894610718
 GameObject:
