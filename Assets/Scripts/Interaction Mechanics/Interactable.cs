@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    [Header("UI and Interaction mechanics")]
     [SerializeField] private string displayName;
-    public bool Interacted = false;
     [SerializeField] private float interactionRadius = 5f;
+
+    [Space(10)]
+    [Header("Debug Mode")]
+    public bool Interacted = false;
+
 
     public string DisplayName
     {
