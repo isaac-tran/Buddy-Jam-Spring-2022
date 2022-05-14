@@ -18,7 +18,6 @@ public class Book : Interactable
 
     public override void Interact()
     {
-        Debug.Log("Book interact called");
         DialogueController.Instance.Play(dialogues, "BookDetails");
     }
 }
