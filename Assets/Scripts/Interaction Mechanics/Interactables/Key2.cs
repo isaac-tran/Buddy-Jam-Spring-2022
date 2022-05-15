@@ -4,7 +4,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Interactable))]
 [RequireComponent(typeof(Dialogues))]
-[RequireComponent(typeof(DialogueTrigger))]
 public class Key2 : Interactable
 {
     Interactable interactable;

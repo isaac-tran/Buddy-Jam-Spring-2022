@@ -4,7 +4,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Interactable))]
 [RequireComponent(typeof(Dialogues))]
-[RequireComponent(typeof(DialogueTrigger))]
 public class Box3 : Interactable
 {
     Interactable interactable;
@@ -23,6 +22,10 @@ public class Box3 : Interactable
         if (Level1GameManager.Instance.Key3)
         {
             Destroy(gameObject);
+        }
+        else
+        {
+            DialogueController.Instance.Play(dialogues, "NeedKey3");
         }
     }
 }
