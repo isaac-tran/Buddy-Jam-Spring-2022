@@ -6,6 +6,7 @@ using UnityEngine;
 //  e.g Standing in front of a door, put a 20x20x10 box collider right in front of the door.
 public class DialogueTriggerThroughCollision : MonoBehaviour
 {
+    public bool oneTimeDialogue;
     public string dialogueTreeToPlay;
     Interactable interactable;
     Dialogues dialogues;
@@ -16,9 +17,12 @@ public class DialogueTriggerThroughCollision : MonoBehaviour
         dialogues = GetComponent<Dialogues>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.tag == "Player")
+        if (other.tag == "Player")
             DialogueController.Instance.Play(dialogues, dialogueTreeToPlay);
+
+        if (oneTimeDialogue)
+            Destroy(gameObject);
     }
 }
