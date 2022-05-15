@@ -238,6 +238,73 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &728807783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 728807786}
+  - component: {fileID: 728807785}
+  - component: {fileID: 728807784}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &728807784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728807783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &728807785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728807783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &728807786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728807783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1416549489
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Set:
-  - CurrentId: 12
+  - CurrentId: 22
     NewWindowOpen: 0
     FirstWindow: 0
     Windows:
@@ -367,8 +434,8 @@ MonoBehaviour:
     - ID: 1
       Size:
         serializedVersion: 2
-        x: 465
-        y: 207
+        x: 441
+        y: 206
         width: 150
         height: 125
       Text: '@EnableSkip
@@ -411,25 +478,138 @@ MonoBehaviour:
     - ID: 3
       Size:
         serializedVersion: 2
-        x: 785
+        x: 862
         y: 207
         width: 150
         height: 125
       Text: '@Ana default
 
         I''m currently just a <#0000FF>placeholder</color>,
-        but I hope we can get along for now!'
-      Type: 0
+        but I hope we can get along for now!
+
+        ... or not?'
+      Type: 1
       NodeType: 1
       Parent: 2
       Trigger: 1
       TriggerText: Ana
-      Connections: 0b000000
+      Connections: 0b0000000c0000000f000000
     - ID: 11
       Size:
         serializedVersion: 2
-        x: 945
-        y: 207
+        x: 1234
+        y: 408
+        width: 150
+        height: 125
+      Text: '@1
+
+        No :('
+      Type: 2
+      NodeType: 1
+      Parent: 3
+      Trigger: 0
+      TriggerText: 
+      Connections: 0e000000
+    - ID: 12
+      Size:
+        serializedVersion: 2
+        x: 1225
+        y: 113
+        width: 150
+        height: 125
+      Text: '@0
+
+        Yes!'
+      Type: 2
+      NodeType: 1
+      Parent: 3
+      Trigger: 0
+      TriggerText: 
+      Connections: 0d000000
+    - ID: 13
+      Size:
+        serializedVersion: 2
+        x: 1421
+        y: 112
+        width: 150
+        height: 125
+      Text: Kay! :>
+      Type: 0
+      NodeType: 1
+      Parent: 12
+      Trigger: 1
+      TriggerText: Ana
+      Connections: 13000000
+    - ID: 14
+      Size:
+        serializedVersion: 2
+        x: 1421
+        y: 408
+        width: 150
+        height: 125
+      Text: '..oh :(
+
+        by then.. i guess... qq
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 11
+      Trigger: 1
+      TriggerText: Ana
+      Connections: 14000000
+    - ID: 15
+      Size:
+        serializedVersion: 2
+        x: 1242
+        y: 612
+        width: 150
+        height: 125
+      Text: '@2
+
+        May.. maybe?'
+      Type: 2
+      NodeType: 1
+      Parent: 3
+      Trigger: 0
+      TriggerText: 
+      Connections: 10000000
+    - ID: 16
+      Size:
+        serializedVersion: 2
+        x: 1453
+        y: 613
+        width: 150
+        height: 125
+      Text: Maybe? lol
+      Type: 0
+      NodeType: 1
+      Parent: 15
+      Trigger: 1
+      TriggerText: Ana
+      Connections: 13000000
+    - ID: 19
+      Size:
+        serializedVersion: 2
+        x: 2030
+        y: 414
+        width: 150
+        height: 125
+      Text: 'Well, I guess there isn''t much more to say...
+
+        Let''s hope
+        we can finish the game by tomorrow!'
+      Type: 0
+      NodeType: 1
+      Parent: 13
+      Trigger: 1
+      TriggerText: Ana
+      Connections: 15000000
+    - ID: 20
+      Size:
+        serializedVersion: 2
+        x: 1594
+        y: 408
         width: 150
         height: 125
       Text: '@bg fadeOut
@@ -439,7 +619,25 @@ MonoBehaviour:
         @Ana fadeOut'
       Type: 0
       NodeType: 2
-      Parent: 3
+      Parent: 14
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+    - ID: 21
+      Size:
+        serializedVersion: 2
+        x: 2213
+        y: 416
+        width: 150
+        height: 125
+      Text: '@bg fadeOut
+
+        @dialog fadeOut
+
+        @Ana fadeOut'
+      Type: 0
+      NodeType: 2
+      Parent: 19
       Trigger: 0
       TriggerText: 
       Connections: 
@@ -505,6 +703,12 @@ PrefabInstance:
       propertyPath: dialogues
       value: 
       objectReference: {fileID: 1416549490}
+    - target: {fileID: 6103844609516298641, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: choiceButtonPrefab
+      value: 
+      objectReference: {fileID: 2764909231673020498, guid: 5df00c35bfb812f43a1bc3331e01399f,
+        type: 3}
     - target: {fileID: 6103844609516298642, guid: f484b582ded1be84baa4f91fcaedfbfb,
         type: 3}
       propertyPath: m_Pivot.x

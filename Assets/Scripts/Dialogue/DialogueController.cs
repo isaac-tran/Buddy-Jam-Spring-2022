@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using System;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DialogueController : MonoBehaviour
 
     public TextAnimator text;
     public TextMeshProUGUI header;
+    public GameObject choiceContainer;
     private DialogueCharacter[] characters;
     private DialogueCharacter characterCurrent;
     private bool isTriggerWaitingForAnims;
@@ -20,6 +22,8 @@ public class DialogueController : MonoBehaviour
     private bool textFinished;
     private bool isFinished = true;
     private bool canSkip = true;
+    private bool isChoosing = false;
+    private DialogueChoice[] choiceButtons;
 
     public UnityEvent onFinished;
     public UnityEvent onStarted;
@@ -40,7 +44,11 @@ public class DialogueController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        choiceButtons = choiceContainer.GetComponentsInChildren<DialogueChoice>();
+        foreach (DialogueChoice btn in choiceButtons)
+        {
+            btn.gameObject.SetActive(false);
+        }
     }
 
     private void Awake()
@@ -105,9 +113,58 @@ public class DialogueController : MonoBehaviour
     {
         // TODO: Handle Choices
 
+        string[] choices = dialogues.GetChoices();
+        if(choices.Length > 0)
+        {
+            isChoosing = true;
+            createChoices(choices);
+        }
+
         textFinished = true;
 
         //if(dialogues.End)
+    }
+
+    private void createChoices(string[] choices)
+    {
+        if (choices.Length > choiceButtons.Length)
+            Debug.LogWarning("Warning: More choices than predefined choice buttons!");
+
+        if (choices[0].Contains("@"))
+        {
+            for (int i = 0; i < choices.Length && i < choiceButtons.Length; i++)
+            {
+                int pos = int.Parse(choices[i].Substring(1, 1));
+                string choice = choices[i].Substring(3);
+
+                if(pos < choiceButtons.Length)
+                {
+                    this.choiceButtons[pos].gameObject.SetActive(true);
+                    this.choiceButtons[pos].InitChoice(choices[i], choice);
+                }
+                else
+                    Debug.LogWarning("Warning: More choices than predefined choice buttons!");
+            }
+        }
+        else
+        {
+            for (int i = 0; i < choices.Length && i < choiceButtons.Length; i++)
+            {
+
+                this.choiceButtons[i].gameObject.SetActive(true);
+                this.choiceButtons[i].InitChoice(choices[i], choices[i]);
+            }
+        }
+    }
+
+    public void PlayChoice(string choice)
+    {
+        dialogues.NextChoice(choice);
+        PlayNext();
+        foreach(DialogueChoice btn in choiceButtons)
+        {
+            btn.gameObject.SetActive(false);
+        }
     }
 
     public void OnTextTrigger(string trigger, bool isSkipping)
@@ -196,7 +253,7 @@ public class DialogueController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isFinished)
+        if (isFinished || isChoosing)
             return;
 
         if (isTriggerWaitingForInput)
