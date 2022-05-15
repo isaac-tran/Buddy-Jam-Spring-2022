@@ -5,7 +5,7 @@ using UnityEngine;
 public class MagicCircle : MonoBehaviour
 {
     [Header("Location of the 3 objects (This circle's location plus the displacement)")]
-    [SerializeField] Vector3[] itemPos = new Vector3[3];
+    [SerializeField] Transform[] itemPos = new Transform[3];
 
     [Space(10)]
     [Header("The 3 objects")]
@@ -19,7 +19,7 @@ public class MagicCircle : MonoBehaviour
             if (chosenObjects[i] == null)
             {
                 chosenObjects[i] = obj;
-                chosenObjects[i].transform.position = transform.position + itemPos[i];
+                chosenObjects[i].transform.position = itemPos[i].position;
                 chosenObjects[i].IsInsideTheCircle = true;
                 return;
             }
