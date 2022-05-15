@@ -9,6 +9,18 @@ public class Glyph : Interactable
     public bool isActive { get; private set; } = false;
     public Texture2D mask;
 
+    [Range(1, 100)]
+    [SerializeField] private int number;
+    public int Number
+    {
+        get { return number; }
+        set
+        {
+            if (value < 1) number = 1;
+            else number = value;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +47,8 @@ public class Glyph : Interactable
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public override void Interact()
     {
-        
+        Level1GameManager.Instance.ActivateGlyph(this);
     }
 }
