@@ -17,8 +17,8 @@ public class Level1GameManager : MonoBehaviour
     public bool Key1 { get { return key1; } }
     public bool Key2 { get { return key2; } }
     public bool Key3 { get { return key3; } }
-    [SerializeField] private int[] correctGlyphs = new int[3];
-    [SerializeField] private int[] playersChosenGlyphs = new int[3];
+    [SerializeField] private Glyph[] correctGlyphs = new Glyph[3];
+    [SerializeField] private Glyph[] playersChosenGlyphs = new Glyph[3];
     [SerializeField] private bool riddle1DoorOpened = false;
 
     private void Awake()
@@ -48,29 +48,30 @@ public class Level1GameManager : MonoBehaviour
     public void ActivateGlyph(Glyph glyph)
     {
         //  First activated glyph
-        if (playersChosenGlyphs[0] < 1)         
+        if (playersChosenGlyphs[0].Number < 1)         
         {
-            playersChosenGlyphs[0] = glyph.Number;
+            playersChosenGlyphs[0] = glyph;
             return;
         }
 
         //  Second activated glyph
-        if (playersChosenGlyphs[1] < 1)    
+        if (playersChosenGlyphs[1].Number < 1)    
         {
-            playersChosenGlyphs[1] = glyph.Number;
+            playersChosenGlyphs[1] = glyph;
             return;
         }
 
         //  Third activated glyph, check, reset
-        playersChosenGlyphs[2] = glyph.Number;
+        playersChosenGlyphs[2] = glyph;
         for (int i = 0; i < 3; i++)
         {
             //  if wrong glyph, reset, retrun
-            if (playersChosenGlyphs[i] != correctGlyphs[i])
+            if (playersChosenGlyphs[i].Number != correctGlyphs[i].Number)
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    playersChosenGlyphs[j] = 0;
+                    playersChosenGlyphs[j].Deactivate();
+                    playersChosenGlyphs[j] = null;
                 }
                 return;
             }
