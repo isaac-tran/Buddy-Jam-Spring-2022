@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Interactable))]
 [RequireComponent(typeof(Dialogues))]
-[RequireComponent(typeof(DialogueTrigger))]
 public class DialogueOnlyInteractable : Interactable
 {
+    public string dialogueTree = "BookDetails";
     Interactable interactable;
     Dialogues dialogues;
 
@@ -18,6 +17,6 @@ public class DialogueOnlyInteractable : Interactable
 
     public override void Interact()
     {
-        DialogueController.Instance.Play(dialogues, "BookDetails");
+        DialogueController.Instance.Play(dialogues, dialogueTree);
     }
 }

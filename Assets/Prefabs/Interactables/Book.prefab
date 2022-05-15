@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5464394946773903043
+--- !u!1 &6705628758032882789
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,13 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5464394946773903042}
-  - component: {fileID: 5464394946773903044}
-  - component: {fileID: 5464394946773903045}
-  - component: {fileID: 5464394946773903046}
-  - component: {fileID: 5464394946773903047}
-  - component: {fileID: 5464394946773903040}
-  - component: {fileID: 5464394946773903041}
+  - component: {fileID: 6705628758032882788}
+  - component: {fileID: 6705628758032882786}
+  - component: {fileID: 6705628758032882787}
+  - component: {fileID: 6705628758032882784}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -22,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5464394946773903042
+--- !u!4 &6705628758032882788
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5464394946773903043}
+  m_GameObject: {fileID: 6705628758032882789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.81, y: 1.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -37,21 +34,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5464394946773903044
+--- !u!33 &6705628758032882786
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5464394946773903043}
+  m_GameObject: {fileID: 6705628758032882789}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5464394946773903045
+--- !u!23 &6705628758032882787
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5464394946773903043}
+  m_GameObject: {fileID: 6705628758032882789}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -87,96 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5464394946773903046
+--- !u!65 &6705628758032882784
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5464394946773903043}
+  m_GameObject: {fileID: 6705628758032882789}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5464394946773903047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5464394946773903043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Set:
-  - CurrentId: 3
-    NewWindowOpen: 0
-    FirstWindow: 0
-    Windows:
-    - ID: 0
-      Size:
-        serializedVersion: 2
-        x: 243.20001
-        y: 68.8
-        width: 150
-        height: 125
-      Text: '@dialog fadeIn
-
-        Hm, this is a suspicious book. I wonder what''s
-        it''s about...'
-      Type: 0
-      NodeType: 0
-      Parent: -1
-      Trigger: 1
-      TriggerText: Player
-      Connections: 02000000
-    - ID: 2
-      Size:
-        serializedVersion: 2
-        x: 426.2
-        y: 70.8
-        width: 150
-        height: 125
-      Text: '@dialog fadeOut'
-      Type: 0
-      NodeType: 2
-      Parent: -2
-      Trigger: 0
-      TriggerText: 
-      Connections: 
-  CurrentSet: 0
-  TabList:
-  - BookDetails
---- !u!114 &5464394946773903040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5464394946773903043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e5d91bc79719847af68399e73bfd37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoStart: 1
-  tree: BookDetails
---- !u!114 &5464394946773903041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5464394946773903043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e603074c06011145a4bf8657584085f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayName: Suspicious Book
-  Interacted: 0
-  interactionRadius: 5
