@@ -68,7 +68,8 @@ public class DialogueController : MonoBehaviour
 
     public void Play(Dialogues dialogue, string tree)
     {
-        playerController.DisableController();
+        if(playerController)
+            playerController.DisableController();
 
         this.dialogues = dialogue;
         dialogues.SetTree(tree);
@@ -160,6 +161,7 @@ public class DialogueController : MonoBehaviour
     public void PlayChoice(string choice)
     {
         dialogues.NextChoice(choice);
+        isChoosing = false;
         PlayNext();
         foreach(DialogueChoice btn in choiceButtons)
         {
