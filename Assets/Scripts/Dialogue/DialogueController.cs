@@ -10,6 +10,7 @@ public class DialogueController : MonoBehaviour
 {
     public StarterAssets.FirstPersonController playerController;
 
+    public DialogueCharacter dialogueBox;
     public TextAnimator text;
     public TextMeshProUGUI header;
     public GameObject choiceContainer;
@@ -23,6 +24,8 @@ public class DialogueController : MonoBehaviour
     private bool isFinished = true;
     private bool canSkip = true;
     private bool isChoosing = false;
+    private bool simulateNextInput = false;
+    private bool isEnding = false;
     private DialogueChoice[] choiceButtons;
 
     public UnityEvent onFinished;
@@ -53,7 +56,7 @@ public class DialogueController : MonoBehaviour
 
     private void Awake()
     {
-        characters = GetComponentsInChildren<DialogueCharacter>();
+        characters = GetComponentsInChildren<DialogueCharacter>();  
         foreach (DialogueCharacter c in characters)
         {
             c.onAnimationsEnded.AddListener(OnAnimationFinished);
@@ -221,9 +224,20 @@ public class DialogueController : MonoBehaviour
 
             case "PlayNext":
                 isTriggerWaitingForInput = false;
+                simulateNextInput = true;
                 text.SkipAll();
                 dialogues.Next();
                 PlayNext();
+                break;
+
+            case "Start":
+                dialogueBox.Play("fadeIn");
+                break;
+
+            case "End":
+                text.enabled = false;
+                isTriggerWaitingForInput = true;
+                isEnding = true;
                 break;
 
             default:
@@ -252,6 +266,17 @@ public class DialogueController : MonoBehaviour
         }
     }
 
+    private void EndDialogue()
+    {
+        Debug.Log("dialogues ended");
+
+        StartCoroutine(playerController.DelayedEnableController());
+
+        isFinished = true;
+        dialogueBox.Play("fadeOut");
+        onFinished.Invoke();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -260,32 +285,34 @@ public class DialogueController : MonoBehaviour
 
         if (isTriggerWaitingForInput)
         {
-            if(Input.anyKeyDown)
+            if(Input.anyKeyDown || simulateNextInput)
             {
-                isTriggerWaitingForInput = false;
-                text.enabled = true;
+                simulateNextInput = false;
+
+                if(!isEnding)
+                {
+                    isTriggerWaitingForInput = false;
+                    text.enabled = true;
+                }
+                else
+                {
+                    isEnding = false;
+                    isTriggerWaitingForInput = false;
+                    text.enabled = true;
+                    EndDialogue();
+                }
+                
             }
         } else if(textFinished)
         {
-            if (Input.anyKeyDown)
+            if (Input.anyKeyDown || simulateNextInput)
             {
+                simulateNextInput = false;
+
                 // TODO: Handle Choices
-                if(dialogues.End())
+                if (dialogues.End())
                 {
-                    Debug.Log("dialogues ended");
-
-                    StartCoroutine(playerController.DelayedEnableController());
-
-                    // TODO: Enable Player Input
-                    // TODO: Refactor:
-                    // "DialogCharacter should be somewhing like DialogEntity ot something
-                    // Refactor {Wait} etc. commands to functions
-                    text.Clear();
-                    header.text = "";
-                    /*DialogueCharacter bg = Array.Find(characters, c => c.characterKey == "dialog");
-                    bg.Play("fadeOut");*/
-                    onFinished.Invoke();
-                    isFinished = true;
+                    EndDialogue();
                 }
                 else
                 {
