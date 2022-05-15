@@ -270,10 +270,19 @@ public class DialogueController : MonoBehaviour
     {
         Debug.Log("dialogues ended");
 
-        StartCoroutine(playerController.DelayedEnableController());
+        if(playerController)
+            StartCoroutine(playerController.DelayedEnableController());
 
         isFinished = true;
-        dialogueBox.Play("fadeOut");
+
+        foreach(DialogueCharacter c in characters)
+        {
+            if(!c.isFadedOut)
+            {
+                c.Play("fadeOut");
+            }
+        }
+
         onFinished.Invoke();
     }
 

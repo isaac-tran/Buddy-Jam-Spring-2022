@@ -18,6 +18,7 @@ public class DialogueCharacter : MonoBehaviour
     private static float animationSpeed = 0.1f;
     private bool isAnimating = false;
     private bool isSkipping = false;
+    public bool isFadedOut = true;
 
 
     private List<Image> _images = new List<Image>();
