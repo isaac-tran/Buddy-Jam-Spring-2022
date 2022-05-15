@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagicCircle : MonoBehaviour
 {
-    [Header("Location of the 3 objects")]
+    [Header("Location of the 3 objects (This circle's location plus the displacement)")]
     [SerializeField] Vector3[] itemPos = new Vector3[3];
 
     [Space(10)]
