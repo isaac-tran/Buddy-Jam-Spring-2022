@@ -25,7 +25,7 @@ public class Glyph : Interactable
     void Start()
     {
         animator = GetComponent<Animator>();
-        if(texture)
+        if(mask)
             GetComponent<MeshRenderer>().material.SetTexture("_mask", mask);
     }
 
@@ -49,6 +49,7 @@ public class Glyph : Interactable
 
     public override void Interact()
     {
+        Activate();
         Level1GameManager.Instance.ActivateGlyph(this);
     }
 }
