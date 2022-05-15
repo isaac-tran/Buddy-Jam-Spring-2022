@@ -12,7 +12,6 @@ public class Interactable : MonoBehaviour
     [Header("Debug Mode")]
     public bool Interacted = false;
 
-
     public string DisplayName
     {
         get { return displayName; }
@@ -22,6 +21,12 @@ public class Interactable : MonoBehaviour
     public float InteractionRadius
     {
         get { return interactionRadius; }
+    }
+
+    private void Start()
+    {
+        if (displayName == "")
+            displayName = gameObject.name;
     }
 
     //  To be overridden
