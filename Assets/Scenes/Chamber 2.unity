@@ -588,6 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenTransitions: {fileID: 1940728692}
+  audioManager: {fileID: 1825737760}
   openingDialogues: {fileID: 361232812}
   mainStoryDialogues: {fileID: 1007983405}
   anastasiasDiaryDialogues: {fileID: 1505110392}
@@ -4547,15 +4548,15 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - soundName: Anastasia theme with intro
-    clip: {fileID: 8300000, guid: 10c29509a83f38b4ab63a014c99e931f, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
   - soundName: Anastasia theme
+    clip: {fileID: 8300000, guid: 10c29509a83f38b4ab63a014c99e931f, type: 3}
+    volume: 0.4
+    pitch: 0.4
+    source: {fileID: 0}
+  - soundName: Anastasia theme with intro
     clip: {fileID: 8300000, guid: 6c1f316b6714cbb4fb10f8e58d254ccf, type: 3}
-    volume: 1
-    pitch: 1
+    volume: 0.4
+    pitch: 0.4
     source: {fileID: 0}
   sounds: []
 --- !u!4 &1825737761

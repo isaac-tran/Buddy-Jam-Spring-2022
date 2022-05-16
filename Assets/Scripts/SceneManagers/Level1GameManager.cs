@@ -11,6 +11,7 @@ public class Level1GameManager : MonoBehaviour
     }
 
     [SerializeField] ScreenTransitions screenTransitions;
+    [SerializeField] AudioManager audioManager;
 
     [Header("Dialogues")]
     public Dialogues openingDialogues;
@@ -51,6 +52,7 @@ public class Level1GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager.PlayMusic("Anastasia theme with intro");
         StartCoroutine(screenTransitions.FadeIn(1));
     }
 
