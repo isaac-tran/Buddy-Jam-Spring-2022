@@ -8,10 +8,11 @@ public class Fireplace : MonoBehaviour
 
     public IEnumerator Rotate()
     {
+        Quaternion currentRotation = transform.rotation;
         float timer = 0f;
         for (timer = 0f; timer <= rotateDuration; timer += Time.deltaTime)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 45, 90), timer / rotateDuration);
+            transform.rotation = Quaternion.Lerp(currentRotation, Quaternion.Euler(0, 45, 90), timer / rotateDuration);
             yield return null;
         }
 

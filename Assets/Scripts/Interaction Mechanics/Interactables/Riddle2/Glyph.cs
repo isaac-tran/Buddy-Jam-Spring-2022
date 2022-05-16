@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Glyph : Interactable
 {
-
     private Animator animator;
-    public bool isActive { get; private set; } = false;
+    [SerializeField] public bool isActive { get; private set; } = false;
     public Texture2D mask;
 
     [Range(1, 100)]

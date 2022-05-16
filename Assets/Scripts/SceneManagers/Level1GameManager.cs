@@ -39,6 +39,11 @@ public class Level1GameManager : MonoBehaviour
             Destroy(this.gameObject);
         else
             _instance = this;
+
+        for (int i = 0; i < 3; i++)
+        {
+            playersChosenGlyphs[i] = null;
+        }
     }
 
     // Start is called before the first frame update
@@ -60,14 +65,14 @@ public class Level1GameManager : MonoBehaviour
     public void ActivateGlyph(Glyph glyph)
     {
         //  First activated glyph
-        if (playersChosenGlyphs[0].Number < 1)         
+        if (playersChosenGlyphs[0] == null)         
         {
             playersChosenGlyphs[0] = glyph;
             return;
         }
 
         //  Second activated glyph
-        if (playersChosenGlyphs[1].Number < 1)    
+        if (playersChosenGlyphs[1] == null)    
         {
             playersChosenGlyphs[1] = glyph;
             return;
@@ -78,7 +83,7 @@ public class Level1GameManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             //  if wrong glyph, reset, retrun
-            if (playersChosenGlyphs[i].Number != correctGlyphs[i].Number)
+            if (playersChosenGlyphs[i] != correctGlyphs[i])
             {
                 for (int j = 0; j < 3; j++)
                 {
@@ -95,6 +100,6 @@ public class Level1GameManager : MonoBehaviour
 
     void ActivateRiddle1Door()
     {
-        riddle1DoorOpened = true;
+        StartCoroutine(fireplace.Rotate());    
     }
 }

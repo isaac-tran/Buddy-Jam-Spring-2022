@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: 
-  Interacted: 0
   interactionRadius: 5
-  texture: {fileID: 0}
+  Interacted: 0
+  mask: {fileID: 0}
+  number: 0
