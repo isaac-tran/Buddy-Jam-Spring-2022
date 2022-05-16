@@ -18,6 +18,10 @@ public class Level1GameManager : MonoBehaviour
         riddle1Dialogues, riddle2Dialogues, riddle3Dialogues;
 
     [Space(10)]
+    [Header("Anastasia's Diary")]
+    public bool acquiredDiary = false;
+
+    [Space(10)]
     [Header("Riddle 1")]
     [SerializeField] private bool key1 = false;
     [SerializeField] private bool key2 = false, key3 = false;
