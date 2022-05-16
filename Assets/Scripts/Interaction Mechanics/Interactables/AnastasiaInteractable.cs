@@ -21,7 +21,7 @@ public class AnastasiaInteractable : Interactable
 
     private void PickDialogue()
     {
-        if (Level1GameManager.Instance.acquiredDiary == true)
+        //if (Level1GameManager.Instance.acquiredDiary == true)
         {
             DialogueController.Instance.Play(Level1GameManager.Instance.anastasiasDiaryDialogues, "SeeAnaAfterEnteringChamber");
         }
