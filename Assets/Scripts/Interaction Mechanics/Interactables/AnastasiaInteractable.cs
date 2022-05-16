@@ -68,6 +68,11 @@ public class AnastasiaInteractable : Interactable
             while (fadingOut) yield return null;
 
             Level1GameManager.Instance.enterAnaRoomDialogueTrigger.SetActive(true);
+
+/*            yield return FadeOut();
+            while (fadingOut) yield return null;*/
+
+            Level1GameManager.Instance.LoopToTitleScreen();
         }
         else
         {

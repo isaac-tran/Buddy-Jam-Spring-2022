@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level1GameManager : MonoBehaviour
 {
@@ -112,5 +113,10 @@ public class Level1GameManager : MonoBehaviour
     {
         StartCoroutine(fireplace.Rotate());    
         StartCoroutine(backdoorToAnaChamber.Rotate());
+    }
+
+    public void LoopToTitleScreen()
+    {
+        SceneManager.LoadScene(0);
     }
 }

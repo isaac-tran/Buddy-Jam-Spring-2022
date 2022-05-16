@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.39198107, g: 0.40182015, b: 0.38272092, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4158,7 +4158,7 @@ MonoBehaviour:
       Trigger: 1
       TriggerText: Anastasia
       Connections: 
-  - CurrentId: 23
+  - CurrentId: 24
     NewWindowOpen: 0
     FirstWindow: 0
     Windows:
@@ -4496,10 +4496,28 @@ MonoBehaviour:
         y: 381.8
         width: 150
         height: 125
-      Text: "I\u2019ll see what\u2019s there.\r\n@End"
+      Text: "I\u2019ll see what\u2019s there.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 21
+      Trigger: 0
+      TriggerText: 
+      Connections: 17000000
+    - ID: 23
+      Size:
+        serializedVersion: 2
+        x: 1315.2
+        y: 381.8
+        width: 150
+        height: 125
+      Text: '@bg fadeIn
+
+        To be continued...
+
+        @End'
       Type: 0
       NodeType: 2
-      Parent: 21
+      Parent: 22
       Trigger: 0
       TriggerText: 
       Connections: 
@@ -4526,7 +4544,7 @@ MonoBehaviour:
       Trigger: 0
       TriggerText: 
       Connections: 
-  CurrentSet: 0
+  CurrentSet: 1
   TabList:
   - PassageToChamberRevealed
   - SeeAnaAfterEnteringChamber
