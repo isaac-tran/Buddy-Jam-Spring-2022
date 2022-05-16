@@ -4,25 +4,17 @@ using UnityEngine;
 
 public class SecretPassageController : MonoBehaviour
 {
+    public float animSpeed = 0.15f;
 
     void Start()
     {
-        GetComponent<Animator>().speed = 0.15f;
-        GetComponent<Animator>().Play("moveDown");
         //StartBookshelveAnimation(5f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MoveDown()
     {
-        
-    }
-
-    IEnumerator StartBookshelveAnimation(float delay)
-    {
-        yield return new WaitForSeconds(delay);
+        GetComponent<Animator>().speed = 0.15f;
         GetComponent<Animator>().Play("moveDown");
-        Debug.Log("moving down?");
     }
 
 
