@@ -36,6 +36,10 @@ public class Level1GameManager : MonoBehaviour
     [SerializeField] private Glyph[] playersChosenGlyphs = new Glyph[3];
     [SerializeField] private bool riddle1DoorOpened = false;
 
+    [Space(10)]
+    [Header("Riddle 2")]
+    public GameObject enterAnaRoomDialogueTrigger;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -47,6 +51,8 @@ public class Level1GameManager : MonoBehaviour
         {
             playersChosenGlyphs[i] = null;
         }
+
+        enterAnaRoomDialogueTrigger.SetActive(false);
     }
 
     // Start is called before the first frame update
