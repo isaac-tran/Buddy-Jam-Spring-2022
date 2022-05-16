@@ -12,8 +12,15 @@ public class Level1GameManager : MonoBehaviour
 
     [SerializeField] ScreenTransitions screenTransitions;
 
-    //  Riddle 1
-    [SerializeField] private bool key1 = false, key2 = false, key3 = false;
+    [Header("Dialogues")]
+    public Dialogues openingDialogues;
+    public Dialogues mainStoryDialogues, anastasiasDiaryDialogues,
+        riddle1Dialogues, riddle2Dialogues, riddle3Dialogues;
+
+    [Space(10)]
+    [Header("Riddle 1")]
+    [SerializeField] private bool key1 = false;
+    [SerializeField] private bool key2 = false, key3 = false;
     public bool Key1 { get { return key1; } }
     public bool Key2 { get { return key2; } }
     public bool Key3 { get { return key3; } }

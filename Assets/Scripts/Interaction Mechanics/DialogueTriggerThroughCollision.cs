@@ -7,6 +7,7 @@ using UnityEngine;
 public class DialogueTriggerThroughCollision : MonoBehaviour
 {
     public bool oneTimeDialogue;
+    private bool dialoguePlayed = false;
     public string dialogueTreeToPlay;
     Interactable interactable;
     Dialogues dialogues;
@@ -19,10 +20,13 @@ public class DialogueTriggerThroughCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-            DialogueController.Instance.Play(dialogues, dialogueTreeToPlay);
+        if (dialoguePlayed == false)
+        {
+            if (other.tag == "Player")
+                DialogueController.Instance.Play(dialogues, dialogueTreeToPlay);
+        }
 
         if (oneTimeDialogue)
-            Destroy(gameObject);
+            dialoguePlayed = true;
     }
 }
