@@ -18,6 +18,18 @@ public class DialogueTriggerThroughCollision : MonoBehaviour
         dialogues = GetComponent<Dialogues>();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (dialoguePlayed == false)
+        {
+            if (collision.collider.tag == "Player")
+                DialogueController.Instance.Play(dialogues, dialogueTreeToPlay);
+        }
+
+        if (oneTimeDialogue)
+            dialoguePlayed = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (dialoguePlayed == false)

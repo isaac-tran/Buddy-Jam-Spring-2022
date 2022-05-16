@@ -24,6 +24,8 @@ public class Level1GameManager : MonoBehaviour
     [Space(10)]
     [Header("Riddle 1")]
     [SerializeField] private Fireplace fireplace;
+    [SerializeField] private BackdoorToAnaChamber backdoorToAnaChamber;
+
     [SerializeField] private bool key1 = false;
     [SerializeField] private bool key2 = false, key3 = false;
     public bool Key1 { get { return key1; } }
@@ -82,8 +84,8 @@ public class Level1GameManager : MonoBehaviour
         playersChosenGlyphs[2] = glyph;
         for (int i = 0; i < 3; i++)
         {
-            //  if wrong glyph, reset, retrun
-            if (playersChosenGlyphs[i] != correctGlyphs[i])
+            //  if wrong glyph or diary not acquired, reset, retrun
+            if (playersChosenGlyphs[i] != correctGlyphs[i] || acquiredDiary == false)
             {
                 for (int j = 0; j < 3; j++)
                 {
@@ -101,5 +103,6 @@ public class Level1GameManager : MonoBehaviour
     void ActivateRiddle1Door()
     {
         StartCoroutine(fireplace.Rotate());    
+        StartCoroutine(backdoorToAnaChamber.Rotate());
     }
 }

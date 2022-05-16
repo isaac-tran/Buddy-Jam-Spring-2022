@@ -67,7 +67,7 @@ public class DialogueController : MonoBehaviour
         //PlayTree("init");
     }
 
-    public bool IsFinished() { return textFinished; }
+    public bool IsFinished() { return isFinished; }
 
     public void Play(Dialogues dialogue, string tree)
     {
