@@ -1281,7 +1281,7 @@ GameObject:
   - component: {fileID: 283673534}
   - component: {fileID: 283673533}
   m_Layer: 0
-  m_Name: OpeningDialogue
+  m_Name: Opening Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1573,6 +1573,445 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 192976920}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &321594005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321594006}
+  - component: {fileID: 321594007}
+  m_Layer: 0
+  m_Name: Riddle 2 Dialogues
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &321594006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321594005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1261413135}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &321594007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321594005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 8
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 253.20001
+        y: 64.8
+        width: 150
+        height: 125
+      Text: '@Start
+
+        Okay, here it is.'
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 1
+      TriggerText: Ana
+      Connections: 01000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 413.2
+        y: 64.8
+        width: 150
+        height: 125
+      Text: What is this?
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 1
+      TriggerText: Player
+      Connections: 02000000
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 573.2
+        y: 64.8
+        width: 150
+        height: 125
+      Text: "It\u2019s the magic circle. Its main purpose is to create magic or to
+        unlock secret passages that have already been cast with a spell."
+      Type: 0
+      NodeType: 1
+      Parent: 1
+      Trigger: 1
+      TriggerText: Ana
+      Connections: 03000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 733.2
+        y: 64.8
+        width: 150
+        height: 125
+      Text: Do you remember how to do it?
+      Type: 0
+      NodeType: 1
+      Parent: 2
+      Trigger: 1
+      TriggerText: Player
+      Connections: 04000000
+    - ID: 4
+      Size:
+        serializedVersion: 2
+        x: 893.2
+        y: 64.8
+        width: 150
+        height: 125
+      Text: "To be honest, it's been so long that I\u2019ve forgotten how to do it."
+      Type: 0
+      NodeType: 1
+      Parent: 3
+      Trigger: 1
+      TriggerText: Ana
+      Connections: 05000000
+    - ID: 5
+      Size:
+        serializedVersion: 2
+        x: 1053.2
+        y: 64.8
+        width: 150
+        height: 125
+      Text: "Okay\u2026 Are there any instructions or a way to perform it?"
+      Type: 0
+      NodeType: 1
+      Parent: 4
+      Trigger: 1
+      TriggerText: 
+      Connections: 06000000
+    - ID: 6
+      Size:
+        serializedVersion: 2
+        x: 1213.2
+        y: 64.8
+        width: 150
+        height: 125
+      Text: "I think it's around here somewhere\u2026 I think."
+      Type: 0
+      NodeType: 1
+      Parent: 5
+      Trigger: 1
+      TriggerText: 
+      Connections: 07000000
+    - ID: 7
+      Size:
+        serializedVersion: 2
+        x: 1373.2
+        y: 64.8
+        width: 150
+        height: 125
+      Text: "Okay, let\u2019s start with that.\n@End"
+      Type: 0
+      NodeType: 2
+      Parent: 6
+      Trigger: 1
+      TriggerText: 
+      Connections: 
+  - CurrentId: 10
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 1274.2
+        y: 94.8
+        width: 150
+        height: 125
+      Text: '@Start
+
+        What kind of book is this??'
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 0
+      TriggerText: 
+      Connections: 01000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 1434.2
+        y: 94.8
+        width: 150
+        height: 125
+      Text: Wait!? Open it. There might be something in there that can help.
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 02000000
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 1429.2
+        y: 242.8
+        width: 150
+        height: 125
+      Text: '@bg fadeOut
+
+        @Wait
+
+        @bg fadeIn
+
+        ''To resurrect
+        the dead or unlock the remains that were previously cast by the user. You
+        will need the following; a magic circle that represents the subject, bring
+        three items that previously belonged to the user and place them inside the
+        circle. Light up the candles and place them outside the circle. Finally,
+        use a specific chant to activate the magic.'''
+      Type: 0
+      NodeType: 1
+      Parent: 1
+      Trigger: 0
+      TriggerText: 
+      Connections: 03000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 1598.2
+        y: 244.8
+        width: 150
+        height: 125
+      Text: "That\u2019s a lot of information for activating the magic.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 2
+      Trigger: 0
+      TriggerText: 
+      Connections: 04000000
+    - ID: 4
+      Size:
+        serializedVersion: 2
+        x: 1758.2
+        y: 244.8
+        width: 150
+        height: 125
+      Text: "It's not really. You\u2019re just too dumb to follow."
+      Type: 0
+      NodeType: 1
+      Parent: 3
+      Trigger: 0
+      TriggerText: 
+      Connections: 05000000
+    - ID: 5
+      Size:
+        serializedVersion: 2
+        x: 1918.2
+        y: 244.8
+        width: 150
+        height: 125
+      Text: "Oi! Okay, we got the circle so\u2026"
+      Type: 0
+      NodeType: 1
+      Parent: 4
+      Trigger: 0
+      TriggerText: 
+      Connections: 06000000
+    - ID: 6
+      Size:
+        serializedVersion: 2
+        x: 2078.2
+        y: 244.8
+        width: 150
+        height: 125
+      Text: The three objects that belonged to me?
+      Type: 0
+      NodeType: 1
+      Parent: 5
+      Trigger: 0
+      TriggerText: 
+      Connections: 07000000
+    - ID: 7
+      Size:
+        serializedVersion: 2
+        x: 2238.2
+        y: 244.8
+        width: 150
+        height: 125
+      Text: Any ideas?
+      Type: 0
+      NodeType: 1
+      Parent: 6
+      Trigger: 0
+      TriggerText: 
+      Connections: 08000000
+    - ID: 8
+      Size:
+        serializedVersion: 2
+        x: 2398.2
+        y: 244.8
+        width: 150
+        height: 125
+      Text: "I\u2019m not sure\u2026 There's a lot of stuff here. And I don\u2019t
+        know where to look."
+      Type: 0
+      NodeType: 1
+      Parent: 7
+      Trigger: 0
+      TriggerText: 
+      Connections: 09000000
+    - ID: 9
+      Size:
+        serializedVersion: 2
+        x: 2558.2
+        y: 244.8
+        width: 150
+        height: 125
+      Text: "Okay, let\u2019s look around."
+      Type: 0
+      NodeType: 2
+      Parent: 8
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+  - CurrentId: 7
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 34.19995
+        y: 77.8
+        width: 150
+        height: 125
+      Text: Okay, we got the items inside the circle. The candles are burning and
+        now for the chant.
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 0
+      TriggerText: 
+      Connections: 01000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 215.19995
+        y: 75.8
+        width: 150
+        height: 125
+      Text: What kind of chant are we saying?
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 02000000
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 388.19995
+        y: 73.8
+        width: 150
+        height: 125
+      Text: "Hang on\u2026 Ah here. It\u2019s \u201Cblah blah\u2026 let me rise to
+        the surface\u2026 blah blah\u2026\u201D"
+      Type: 0
+      NodeType: 1
+      Parent: 1
+      Trigger: 0
+      TriggerText: 
+      Connections: 03000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 557.19995
+        y: 72.8
+        width: 150
+        height: 125
+      Text: Are you serious?
+      Type: 0
+      NodeType: 1
+      Parent: 2
+      Trigger: 0
+      TriggerText: 
+      Connections: 04000000
+    - ID: 4
+      Size:
+        serializedVersion: 2
+        x: 720.19995
+        y: 72.79999
+        width: 150
+        height: 125
+      Text: No, you idiot! Open your ears and listen.
+      Type: 0
+      NodeType: 1
+      Parent: 3
+      Trigger: 0
+      TriggerText: 
+      Connections: 05000000
+    - ID: 5
+      Size:
+        serializedVersion: 2
+        x: 880.19995
+        y: 72.79999
+        width: 150
+        height: 125
+      Text: "\u201CHere lie the last remnants of the dead. They send their message
+        to the surface through blood and ash. It shall rise back to the surface once
+        more and reclaim what was taken from them.\u201D\n@End"
+      Type: 0
+      NodeType: 2
+      Parent: 4
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+  - CurrentId: 1
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 919.2
+        y: 74.8
+        width: 150
+        height: 125
+      Text: "@Start\nYes! It worked! Now we can head down there. Let\u2019s go, let\u2019s
+        go.\n@End"
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+  CurrentSet: 3
+  TabList:
+  - EnterAnaRoom
+  - BeginRiddle2
+  - AfterGatheringTheItems
+  - EndRiddle2
 --- !u!1 &345303184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,6 +2223,121 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &366482689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 366482690}
+  - component: {fileID: 366482694}
+  - component: {fileID: 366482693}
+  - component: {fileID: 366482692}
+  - component: {fileID: 366482691}
+  m_Layer: 0
+  m_Name: Object1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &366482690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366482689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1414562124}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &366482691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366482689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f023ef40c6257458caeb2203541051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: 
+  interactionRadius: 5
+  Interacted: 0
+  prevPosBeforePutInMagicCircle: {x: 0, y: 0, z: 0}
+  isInsideTheCircle: 0
+--- !u!65 &366482692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366482689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &366482693
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366482689}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &366482694
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366482689}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &391512940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,6 +2997,121 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 488453316}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &555090745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 555090746}
+  - component: {fileID: 555090749}
+  - component: {fileID: 555090748}
+  - component: {fileID: 555090747}
+  - component: {fileID: 555090750}
+  m_Layer: 0
+  m_Name: Object1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &555090746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555090745}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1414562124}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &555090747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555090745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &555090748
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555090745}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &555090749
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555090745}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &555090750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555090745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f023ef40c6257458caeb2203541051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: 
+  interactionRadius: 5
+  Interacted: 0
+  prevPosBeforePutInMagicCircle: {x: 0, y: 0, z: 0}
+  isInsideTheCircle: 0
 --- !u!1 &556400857
 GameObject:
   m_ObjectHideFlags: 0
@@ -3847,7 +4516,7 @@ GameObject:
   - component: {fileID: 957171033}
   - component: {fileID: 957171032}
   m_Layer: 0
-  m_Name: AnastasiasDiaryDialogues
+  m_Name: Anastasias Diary Dialogues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5424,6 +6093,7 @@ Transform:
   - {fileID: 283673532}
   - {fileID: 1139192092}
   - {fileID: 957171033}
+  - {fileID: 321594006}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5474,6 +6144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238225cdf50e60049b796348bced9ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: 
+  interactionRadius: 5
+  Interacted: 0
+  dialogueTree: 
 --- !u!65 &1316478399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6020,6 +6694,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389743897}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1414562123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1414562124}
+  m_Layer: 0
+  m_Name: Riddle2Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1414562124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414562123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.179232, y: 0.34312156, z: -11.9813595}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 555090746}
+  - {fileID: 366482690}
+  - {fileID: 1881008497}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1417176879
 GameObject:
   m_ObjectHideFlags: 0
@@ -7331,6 +8039,121 @@ Transform:
   m_Father: {fileID: 1261413135}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1881008496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1881008497}
+  - component: {fileID: 1881008501}
+  - component: {fileID: 1881008500}
+  - component: {fileID: 1881008499}
+  - component: {fileID: 1881008498}
+  m_Layer: 0
+  m_Name: Object1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1881008497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881008496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1414562124}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881008498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881008496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f023ef40c6257458caeb2203541051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: 
+  interactionRadius: 5
+  Interacted: 0
+  prevPosBeforePutInMagicCircle: {x: 0, y: 0, z: 0}
+  isInsideTheCircle: 0
+--- !u!65 &1881008499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881008496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1881008500
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881008496}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1881008501
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881008496}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1894610718
 GameObject:
   m_ObjectHideFlags: 0
