@@ -596,8 +596,8 @@ MonoBehaviour:
   riddle2Dialogues: {fileID: 0}
   riddle3Dialogues: {fileID: 0}
   acquiredDiary: 0
-  fireplace: {fileID: 0}
-  backdoorToAnaChamber: {fileID: 0}
+  fireplace: {fileID: 2150508616232782436}
+  backdoorToAnaChamber: {fileID: 2150508616232782435}
   key1: 0
   key2: 0
   key3: 0
@@ -6762,3 +6762,41 @@ MonoBehaviour:
   Interacted: 0
   prevPosBeforePutInMagicCircle: {x: 0, y: 0, z: 0}
   isInsideTheCircle: 0
+--- !u!1 &2150508616232782433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3697442186044840230, guid: 62dbea4c6d3fcf949bbfe9f5c60a87ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150508616232782429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2150508616232782434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5088128390416065791, guid: 62dbea4c6d3fcf949bbfe9f5c60a87ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150508616232782429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2150508616232782435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2150508616232782433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360949ff0af49ce4e89eb5addf367b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateDuration: 3
+--- !u!114 &2150508616232782436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2150508616232782434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551669b8fe1802e4b97617e706178d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateDuration: 3

@@ -64,13 +64,10 @@ public class AnastasiaInteractable : Interactable
             DialogueController.Instance.Play(Level1GameManager.Instance.anastasiasDiaryDialogues, "SeeAnaAfterEnteringChamber");
             while (DialogueController.Instance.IsFinished() == false) yield return null;
 
-            yield return FadeOut();
+/*            yield return FadeOut();
             while (fadingOut) yield return null;
 
-            Level1GameManager.Instance.enterAnaRoomDialogueTrigger.SetActive(true);
-
-/*            yield return FadeOut();
-            while (fadingOut) yield return null;*/
+            Level1GameManager.Instance.enterAnaRoomDialogueTrigger.SetActive(true);*/
 
             Level1GameManager.Instance.LoopToTitleScreen();
         }
