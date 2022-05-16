@@ -16,7 +16,6 @@ public class MagicCircleItem : Interactable
         set { isInsideTheCircle = value; }
     }
     private MagicCircle magicCircle;
-
     private void Awake()
     {
         magicCircle = GameObject.Find("Magic Circle").GetComponent<MagicCircle>();
