@@ -23,6 +23,7 @@ public class Level1GameManager : MonoBehaviour
 
     [Space(10)]
     [Header("Riddle 1")]
+    [SerializeField] private Fireplace fireplace;
     [SerializeField] private bool key1 = false;
     [SerializeField] private bool key2 = false, key3 = false;
     public bool Key1 { get { return key1; } }
