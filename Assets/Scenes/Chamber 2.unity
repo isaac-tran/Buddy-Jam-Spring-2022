@@ -2421,7 +2421,7 @@ MonoBehaviour:
   interactionRadius: 3
   Interacted: 0
   dialogueTree: 
-  fadeDuration: 2
+  fadeDuration: 1
 --- !u!65 &547145831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4510,6 +4510,69 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1825737759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1825737761}
+  - component: {fileID: 1825737760}
+  m_Layer: 0
+  m_Name: AudioManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1825737760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825737759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44581b206f1da24cade3f7ff4ee61a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteMusic: 0
+  muteSound: 0
+  music:
+  - soundName: City
+    clip: {fileID: 8300000, guid: 20bf74cb7e84a0b458e0cb88148bcd83, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - soundName: Anastasia theme with intro
+    clip: {fileID: 8300000, guid: 10c29509a83f38b4ab63a014c99e931f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - soundName: Anastasia theme
+    clip: {fileID: 8300000, guid: 6c1f316b6714cbb4fb10f8e58d254ccf, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  sounds: []
+--- !u!4 &1825737761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825737759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 959.9999, y: 428.90753, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1840713754
 GameObject:
   m_ObjectHideFlags: 0
