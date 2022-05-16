@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Diary : Interactable
+public class AnastasiaInteractable : Interactable
 {
     public string dialogueTree;
     Interactable interactable;
@@ -16,8 +16,14 @@ public class Diary : Interactable
 
     public override void Interact()
     {
-        Level1GameManager.Instance.acquiredDiary = true;
-        DialogueController.Instance.Play(dialogues, dialogueTree);
-        Destroy(gameObject);
+        PickDialogue();
+    }
+
+    private void PickDialogue()
+    {
+        if (Level1GameManager.Instance.acquiredDiary == true)
+        {
+            DialogueController.Instance.Play(Level1GameManager.Instance.anastasiasDiaryDialogues, "SeeAnaAfterEnteringChamber");
+        }
     }
 }

@@ -1003,6 +1003,7 @@ Transform:
   - {fileID: 2003191628}
   - {fileID: 1611729557}
   - {fileID: 410474319}
+  - {fileID: 1316478397}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1895,7 +1896,7 @@ MonoBehaviour:
         y: 116.8
         width: 150
         height: 125
-      Text: 'Acquired <#0000FF> Anastasia''s diary</color>.
+      Text: 'Obtained <#0000FF> Anastasia''s diary</color>.
 
         @End'
       Type: 0
@@ -3885,9 +3886,355 @@ MonoBehaviour:
       Trigger: 1
       TriggerText: Anastasia
       Connections: 
+  - CurrentId: 23
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 507.2
+        y: 66.8
+        width: 150
+        height: 125
+      Text: "@Start\nWait\u2026 how did you\u2026 get through? It\u2019s blocked.
+        There\u2019s no way you can do that."
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 01000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 667.2
+        y: 66.8
+        width: 150
+        height: 125
+      Text: "What do you mean? There\u2019s a passage that took me to your chamber.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 1
+      TriggerText: Player
+      Connections: 02000000
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 830.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: "That\u2019s impossible. That means\u2026 you can just walk through just
+        like that!? If that\u2019s the case then does that mean\u2026 you\u2019re
+        real\u2026\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 1
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 03000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 990.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: 'Yeah, I am real.
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 2
+      Trigger: 1
+      TriggerText: Player
+      Connections: 04000000
+    - ID: 4
+      Size:
+        serializedVersion: 2
+        x: 1150.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: "Oh my\u2026 I\u2026 I\u2026 thought you\u2026\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 3
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 05000000
+    - ID: 5
+      Size:
+        serializedVersion: 2
+        x: 1309.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: Thought what?
+      Type: 0
+      NodeType: 1
+      Parent: 4
+      Trigger: 1
+      TriggerText: Player
+      Connections: 06000000
+    - ID: 6
+      Size:
+        serializedVersion: 2
+        x: 1469.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: "No. It has to be a trick or something. Look, what do you want from me\u2026
+        I lost everything over the past 1000 years and at this point\u2026 I\u2019m
+        numb to anything that you throw at me.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 5
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 07000000
+    - ID: 7
+      Size:
+        serializedVersion: 2
+        x: 1629.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: Not everything.
+      Type: 0
+      NodeType: 1
+      Parent: 6
+      Trigger: 1
+      TriggerText: Player
+      Connections: 08000000
+    - ID: 8
+      Size:
+        serializedVersion: 2
+        x: 1789.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: 'The player gives the diary back to Anastasia.
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 7
+      Trigger: 1
+      TriggerText: ' '
+      Connections: 09000000
+    - ID: 9
+      Size:
+        serializedVersion: 2
+        x: 1788.2
+        y: 211.8
+        width: 150
+        height: 125
+      Text: What the hell! Did you go to my chamber and find this!?
+      Type: 0
+      NodeType: 1
+      Parent: 8
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 0a000000
+    - ID: 10
+      Size:
+        serializedVersion: 2
+        x: 1627.2
+        y: 215.8
+        width: 150
+        height: 125
+      Text: 'Yeah, I did. It looked important.
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 9
+      Trigger: 0
+      TriggerText: 
+      Connections: 0b000000
+    - ID: 11
+      Size:
+        serializedVersion: 2
+        x: 1462.2
+        y: 218.8
+        width: 150
+        height: 125
+      Text: "To me, yes. Not to you. Wait\u2026 did you\u2026 read it?"
+      Type: 0
+      NodeType: 1
+      Parent: 10
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 0c000000
+    - ID: 12
+      Size:
+        serializedVersion: 2
+        x: 1299.2
+        y: 222.8
+        width: 150
+        height: 125
+      Text: ...
+      Type: 0
+      NodeType: 1
+      Parent: 11
+      Trigger: 0
+      TriggerText: 
+      Connections: 0d000000
+    - ID: 13
+      Size:
+        serializedVersion: 2
+        x: 1133.2
+        y: 223.8
+        width: 150
+        height: 125
+      Text: "Oh my demon lord! You read it, didn\u2019t you? Just great, my title
+        of being \u2018The One True Demon Lord\u2019 is now down the poophole.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 12
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 0e000000
+    - ID: 14
+      Size:
+        serializedVersion: 2
+        x: 967.19995
+        y: 225.8
+        width: 150
+        height: 125
+      Text: "It can\u2019t be that bad."
+      Type: 0
+      NodeType: 1
+      Parent: 13
+      Trigger: 0
+      TriggerText: 
+      Connections: 0f000000
+    - ID: 15
+      Size:
+        serializedVersion: 2
+        x: 800.19995
+        y: 225.8
+        width: 150
+        height: 125
+      Text: "Oh really!? You wouldn\u2019t like it if I read your diary or journal
+        or whatever you write!\n"
+      Type: 0
+      NodeType: 1
+      Parent: 14
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 10000000
+    - ID: 16
+      Size:
+        serializedVersion: 2
+        x: 629.19995
+        y: 225.8
+        width: 150
+        height: 125
+      Text: ...
+      Type: 0
+      NodeType: 1
+      Parent: 15
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 11000000
+    - ID: 17
+      Size:
+        serializedVersion: 2
+        x: 454.19995
+        y: 226.8
+        width: 150
+        height: 125
+      Text: "That\u2019s beside the point. If you can move through this magic at
+        ease then. There\u2019s a possible way of getting outta here.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 16
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 12000000
+    - ID: 18
+      Size:
+        serializedVersion: 2
+        x: 443.19995
+        y: 377.8
+        width: 150
+        height: 125
+      Text: "Yeah. Maybe there\u2019s a way to put you in peace."
+      Type: 0
+      NodeType: 1
+      Parent: 17
+      Trigger: 0
+      TriggerText: 
+      Connections: 13000000
+    - ID: 19
+      Size:
+        serializedVersion: 2
+        x: 621.19995
+        y: 377.8
+        width: 150
+        height: 125
+      Text: I guess. What can you see that I can't?
+      Type: 0
+      NodeType: 1
+      Parent: 18
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 14000000
+    - ID: 20
+      Size:
+        serializedVersion: 2
+        x: 802.19995
+        y: 381.8
+        width: 150
+        height: 125
+      Text: Well, you saw me come through. Are there any routes that you may know?
+      Type: 0
+      NodeType: 1
+      Parent: 19
+      Trigger: 0
+      TriggerText: 
+      Connections: 15000000
+    - ID: 21
+      Size:
+        serializedVersion: 2
+        x: 980.19995
+        y: 382.8
+        width: 150
+        height: 125
+      Text: 'There was a secret passage hidden between the throne room and my chamber
+        in case of emergencies that may work. But it can only be unlocked back in
+        my chamber. You probably have to head back there and figure out a way to
+        unlock it for me.
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 20
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 16000000
+    - ID: 22
+      Size:
+        serializedVersion: 2
+        x: 1155.2
+        y: 381.8
+        width: 150
+        height: 125
+      Text: "I\u2019ll see what\u2019s there.\r\n@End"
+      Type: 0
+      NodeType: 2
+      Parent: 21
+      Trigger: 0
+      TriggerText: 
+      Connections: 
   CurrentSet: 0
   TabList:
   - PassageToChamberRevealed
+  - SeeAnaAfterEnteringChamber
 --- !u!4 &957171033
 Transform:
   m_ObjectHideFlags: 0
@@ -5080,6 +5427,116 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1316478396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1316478397}
+  - component: {fileID: 1316478401}
+  - component: {fileID: 1316478400}
+  - component: {fileID: 1316478399}
+  - component: {fileID: 1316478398}
+  m_Layer: 0
+  m_Name: Anastasia Interactable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1316478397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316478396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.11, z: 42.17}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 223062154}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1316478398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316478396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238225cdf50e60049b796348bced9ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1316478399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316478396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1316478400
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316478396}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1316478401
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316478396}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1343051879
 GameObject:
   m_ObjectHideFlags: 0
@@ -7084,12 +7541,17 @@ MonoBehaviour:
         height: 125
       Text: '@Start
 
-        Where the hell do you think you are going?'
+        @Wait
+
+        @Ana shouting
+
+        Where the hell
+        do you think you are going?'
       Type: 0
       NodeType: 0
       Parent: -1
-      Trigger: 1
-      TriggerText: Anastasia
+      Trigger: 0
+      TriggerText: 
       Connections: 01000000
     - ID: 1
       Size:
@@ -7329,7 +7791,7 @@ MonoBehaviour:
       NodeType: 0
       Parent: -1
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 
   CurrentSet: 0
   TabList:
