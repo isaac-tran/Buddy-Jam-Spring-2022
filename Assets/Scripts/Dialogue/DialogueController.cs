@@ -214,6 +214,14 @@ public class DialogueController : MonoBehaviour
                 }
                 break;
 
+            case "SetImage":
+                if (parameters.Length > 2)
+                {
+                    character = Array.Find(characters, c => c.characterKey == parameters[1]);
+                    character.setPortrait(trigger.Substring(parameters[0].Length + parameters[1].Length + 2));
+                }
+                break;
+
             case "DisableSkip":
                 canSkip = false;
                 break;
