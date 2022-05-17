@@ -2493,7 +2493,7 @@ GameObject:
   - component: {fileID: 1321184938452326175}
   - component: {fileID: 672277157804368450}
   - component: {fileID: 1491953031}
-  - component: {fileID: 1491953032}
+  - component: {fileID: 6429304909976266419}
   m_Layer: 0
   m_Name: Note1
   m_TagString: Untagged
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   interactionRadius: 9
   Interacted: 0
   dialogueTree: Note1
---- !u!114 &1491953032
+--- !u!114 &6429304909976266419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2620,9 +2620,9 @@ MonoBehaviour:
         y: 225.79999
         width: 150
         height: 125
-      Text: '@Start
+      Text: '@Note note1
 
-        @SetImage Note default
+        @Note fadeIn
 
         @End'
       Type: 0
@@ -2793,7 +2793,7 @@ GameObject:
   - component: {fileID: 7545299529153054624}
   - component: {fileID: 8294736491972171523}
   - component: {fileID: 1591366688}
-  - component: {fileID: 1591366689}
+  - component: {fileID: 1173504092559036336}
   m_Layer: 0
   m_Name: Note2
   m_TagString: Untagged
@@ -2896,7 +2896,7 @@ MonoBehaviour:
   interactionRadius: 9
   Interacted: 0
   dialogueTree: Note2
---- !u!114 &1591366689
+--- !u!114 &1173504092559036336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2920,9 +2920,9 @@ MonoBehaviour:
         y: 138.8
         width: 150
         height: 125
-      Text: '@Start
+      Text: '@Note note2
 
-        @SetImage Note angry
+        @Note fadeIn
 
         @End'
       Type: 0
@@ -3942,8 +3942,8 @@ GameObject:
   - component: {fileID: 6118625733212199595}
   - component: {fileID: 4837321239000173396}
   - component: {fileID: 4229788641525516196}
-  - component: {fileID: 578739789}
-  - component: {fileID: 578739790}
+  - component: {fileID: 8973410074445348814}
+  - component: {fileID: 6772094087011595413}
   m_Layer: 0
   m_Name: Note3
   m_TagString: Untagged
@@ -4030,7 +4030,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &578739789
+--- !u!114 &8973410074445348814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4046,7 +4046,7 @@ MonoBehaviour:
   interactionRadius: 9
   Interacted: 0
   dialogueTree: Note3
---- !u!114 &578739790
+--- !u!114 &6772094087011595413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4070,16 +4070,16 @@ MonoBehaviour:
         y: 94.8
         width: 150
         height: 125
-      Text: '@Start
+      Text: '@Note note3
 
-        @SetImage Note concerned
+        @Note fadeIn
 
         @End'
       Type: 0
       NodeType: 0
       Parent: -1
-      Trigger: 1
-      TriggerText: Note
+      Trigger: 0
+      TriggerText: 
       Connections: 
   CurrentSet: 0
   TabList:
