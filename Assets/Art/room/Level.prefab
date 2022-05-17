@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 361232809}
   - component: {fileID: 361232811}
-  - component: {fileID: 361232812}
-  - component: {fileID: 361232810}
+  - component: {fileID: 4776085392281926003}
+  - component: {fileID: 8539597660047516681}
   m_Layer: 0
   m_Name: Opening Dialogue
   m_TagString: Untagged
@@ -47,7 +47,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &361232812
+--- !u!114 &4776085392281926003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361232808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e5d91bc79719847af68399e73bfd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoStart: 1
+  tree: Opening
+--- !u!114 &8539597660047516681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,7 +87,7 @@ MonoBehaviour:
         height: 125
       Text: '@bg fullOpaque
 
-        @dialog fadeIn
+        @Start
 
         @Ana fadeIn
 
@@ -91,7 +105,7 @@ MonoBehaviour:
         y: 156.8
         width: 150
         height: 125
-      Text: "Wha\u2026 where am I?"
+      Text: "Wha\u2026 where am I?\n@Ana fadeOut"
       Type: 0
       NodeType: 1
       Parent: 0
@@ -125,7 +139,7 @@ MonoBehaviour:
       NodeType: 1
       Parent: 3
       Trigger: 1
-      TriggerText: Mysterious Female Voice
+      TriggerText: Ana
       Connections: 05000000
     - ID: 5
       Size:
@@ -153,12 +167,12 @@ MonoBehaviour:
         height: 125
       Text: "\u2026First I got kicked out of my chamber unwillingly and now I ran
         out places to put scratches in this damn place. Aargh! I\u2019m so done with
-        this.\r\n"
+        this.\r"
       Type: 0
       NodeType: 1
       Parent: 5
       Trigger: 1
-      TriggerText: Mysterious Female Voice
+      TriggerText: Ana
       Connections: 07000000
     - ID: 7
       Size:
@@ -181,12 +195,15 @@ MonoBehaviour:
         y: 295.8
         width: 150
         height: 125
-      Text: Please tell me if there are any more spots to scratch. Just one.
+      Text: '@Ana concerned
+
+        Please tell me if there are any more spots to
+        scratch. Just one.'
       Type: 0
       NodeType: 1
       Parent: -2
       Trigger: 1
-      TriggerText: Mysterious Female Voice
+      TriggerText: Ana
       Connections: 09000000
     - ID: 9
       Size:
@@ -209,13 +226,13 @@ MonoBehaviour:
         y: 297.8
         width: 150
         height: 125
-      Text: "Who said\u2026 that? You dare try to insult me! \u2018The One True Demon
-        Lord\u2019 - Anastasia."
+      Text: "@Ana pissed\n@SetName Ana Anastasia\nWho said\u2026 that? You dare try
+        to insult me! \u2018The One True Demon Lord\u2019 - Anastasia."
       Type: 0
       NodeType: 1
       Parent: 9
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 0b000000
     - ID: 11
       Size:
@@ -238,13 +255,13 @@ MonoBehaviour:
         y: 295.8
         width: 150
         height: 125
-      Text: "Whom I\u2019m kidding, no matter what I say or do. You\u2019re just
-        a hallucination."
+      Text: "@Ana neutral\nWhom I\u2019m kidding, no matter what I say or do. You\u2019re
+        just a hallucination."
       Type: 0
       NodeType: 1
       Parent: 11
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 19000000
     - ID: 22
       Size:
@@ -253,20 +270,18 @@ MonoBehaviour:
         y: 289.8
         width: 150
         height: 125
-      Text: 'Well, if you insist that you are not a hallucination, then prove it!
-        If you find something I can write before me, I''ll believe you!
+      Text: '@Ana sassy
 
-        @bg
-        fadeOut
-
-        @Ana fadeOut
+        Well, if you insist that you are not a hallucination,
+        then prove it! If you find something I can write on and bring it to me, I
+        might believe you!
 
         @End'
       Type: 0
       NodeType: 2
       Parent: -2
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 
     - ID: 25
       Size:
@@ -285,20 +300,6 @@ MonoBehaviour:
   CurrentSet: 0
   TabList:
   - Opening
---- !u!114 &361232810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361232808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e5d91bc79719847af68399e73bfd37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoStart: 1
-  tree: Opening
 --- !u!1 &1007983402
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1505110393}
-  - component: {fileID: 1505110392}
+  - component: {fileID: 7537755305606292483}
   m_Layer: 0
   m_Name: Anastasias Diary Dialogues
   m_TagString: Untagged
@@ -432,7 +433,7 @@ Transform:
   m_Father: {fileID: 1147328239}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1505110392
+--- !u!114 &7537755305606292483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -456,14 +457,14 @@ MonoBehaviour:
         y: 97.8
         width: 150
         height: 125
-      Text: "@Start\n@Ana angry\nOh, congratulations! You're a fool trying to kill
-        me now\u2026 even though I\u2019m already am like\u2026 very long time ago.
-        Ugh\u2026 I\u2019ve lost track of how many years it\u2019s been.\r\n@End"
+      Text: "@Ana angry\n@Wait\n@Start\nOh, congratulations! You're a fool trying
+        to kill me now\u2026 even though I\u2019m already am like\u2026 very long
+        time ago. Ugh\u2026 I\u2019ve lost track of how many years it\u2019s been.\r\n@End"
       Type: 0
       NodeType: 0
       Parent: -1
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 
   - CurrentId: 24
     NewWindowOpen: 0
@@ -476,13 +477,13 @@ MonoBehaviour:
         y: 66.8
         width: 150
         height: 125
-      Text: "@Start\nWait\u2026 how did you\u2026 get through? It\u2019s blocked.
-        There\u2019s no way you can do that."
+      Text: "@Ana scared\n@Start\nWait\u2026 how did you\u2026 get through? It\u2019s
+        blocked. There\u2019s no way you can do that."
       Type: 0
       NodeType: 0
       Parent: -1
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 01000000
     - ID: 1
       Size:
@@ -505,14 +506,14 @@ MonoBehaviour:
         y: 67.8
         width: 150
         height: 125
-      Text: "That\u2019s impossible. That means\u2026 you can just walk through just
-        like that!? If that\u2019s the case then does that mean\u2026 you\u2019re
-        real\u2026\r\n"
+      Text: "@Ana concerned\nThat\u2019s impossible. That means\u2026 you can just
+        walk through just like that!? If that\u2019s the case then does that mean\u2026
+        you\u2019re real\u2026\r\n"
       Type: 0
       NodeType: 1
       Parent: 1
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 03000000
     - ID: 3
       Size:
@@ -542,7 +543,7 @@ MonoBehaviour:
       NodeType: 1
       Parent: 3
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 05000000
     - ID: 5
       Size:
@@ -565,14 +566,14 @@ MonoBehaviour:
         y: 67.8
         width: 150
         height: 125
-      Text: "No. It has to be a trick or something. Look, what do you want from me\u2026
-        I lost everything over the past 1000 years and at this point\u2026 I\u2019m
-        numb to anything that you throw at me.\r\n"
+      Text: "@Ana neutral\nNo. It has to be a trick or something. Look, what do you
+        want from me\u2026 I lost everything over the past 1000 years and at this
+        point\u2026 I\u2019m numb to anything that you throw at me.\r\n"
       Type: 0
       NodeType: 1
       Parent: 5
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 07000000
     - ID: 7
       Size:
@@ -733,7 +734,7 @@ MonoBehaviour:
       NodeType: 1
       Parent: 16
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 12000000
     - ID: 18
       Size:
@@ -848,10 +849,10 @@ MonoBehaviour:
       Type: 0
       NodeType: 0
       Parent: -1
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Ana
       Connections: 
-  CurrentSet: 1
+  CurrentSet: 0
   TabList:
   - PassageToChamberRevealed
   - SeeAnaAfterEnteringChamber

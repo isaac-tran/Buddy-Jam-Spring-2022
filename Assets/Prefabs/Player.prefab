@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 2845194611411799454}
   - component: {fileID: 2845194611411799455}
   - component: {fileID: 2845194611411799452}
+  - component: {fileID: 6065563794997346521}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -142,6 +143,7 @@ MonoBehaviour:
   headerColor: {r: 0.26265153, g: 0.21568626, b: 0.7529412, a: 1}
   animator: {fileID: 2845194611411799452}
   defaultImage: default
+  isFadedOut: 1
   onAnimationsEnded:
     m_PersistentCalls:
       m_Calls: []
@@ -165,3 +167,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!225 &6065563794997346521
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2845194611411799450}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

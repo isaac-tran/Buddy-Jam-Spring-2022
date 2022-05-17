@@ -27,6 +27,8 @@ public class DialogueController : MonoBehaviour
     private bool simulateNextInput = false;
     private bool isEnding = false;
     private DialogueChoice[] choiceButtons;
+    private CanvasGroup canvasGroup;
+    private Animator animator;
 
     public UnityEvent onFinished;
     public UnityEvent onStarted;
@@ -56,13 +58,16 @@ public class DialogueController : MonoBehaviour
 
     private void Awake()
     {
-        characters = GetComponentsInChildren<DialogueCharacter>();  
+        //canvasGroup = GetComponent<CanvasGroup>();
+        animator = GetComponent<Animator>();
+        characters = GetComponentsInChildren<DialogueCharacter>();
         foreach (DialogueCharacter c in characters)
         {
             c.onAnimationsEnded.AddListener(OnAnimationFinished);
         }
         text.onTrigger.AddListener(OnTextTrigger);
         text.onFinished.AddListener(OnTextFinished);
+
 
         //PlayTree("init");
     }
@@ -239,7 +244,7 @@ public class DialogueController : MonoBehaviour
                 break;
 
             case "Start":
-                dialogueBox.Play("fadeIn");
+                animator.Play("fadeIn");
                 break;
 
             case "End":
@@ -283,13 +288,21 @@ public class DialogueController : MonoBehaviour
 
         isFinished = true;
 
+        animator.Play("fadeOut");
+
+        /*
         foreach(DialogueCharacter c in characters)
         {
-            if(!c.isFadedOut)
+            CanvasGroup group = c.GetComponent<CanvasGroup>();
+            if(group)
             {
-                c.Play("fadeOut");
+                if(group.alpha > 0.5)
+                {
+                    group.alpha = 0f;
+                }
             }
         }
+        */
 
         onFinished.Invoke();
     }

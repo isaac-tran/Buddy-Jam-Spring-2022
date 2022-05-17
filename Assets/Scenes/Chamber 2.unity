@@ -589,9 +589,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenTransitions: {fileID: 1940728692}
   audioManager: {fileID: 1825737760}
-  openingDialogues: {fileID: 361232812}
+  openingDialogues: {fileID: 0}
   mainStoryDialogues: {fileID: 1007983405}
-  anastasiasDiaryDialogues: {fileID: 1505110392}
+  anastasiasDiaryDialogues: {fileID: 0}
   riddle1Dialogues: {fileID: 0}
   riddle2Dialogues: {fileID: 0}
   riddle3Dialogues: {fileID: 0}
@@ -1076,18 +1076,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 336008658}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &361232812 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 361232812, guid: 62dbea4c6d3fcf949bbfe9f5c60a87ac,
-    type: 3}
-  m_PrefabInstance: {fileID: 2150508616232782429}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &366409910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3805,18 +3793,6 @@ MonoBehaviour:
   CurrentSet: 0
   TabList:
   - Note1
---- !u!114 &1505110392 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1505110392, guid: 62dbea4c6d3fcf949bbfe9f5c60a87ac,
-    type: 3}
-  m_PrefabInstance: {fileID: 2150508616232782429}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1547163779
 GameObject:
   m_ObjectHideFlags: 0
@@ -5081,10 +5057,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: default
       objectReference: {fileID: 0}
+    - target: {fileID: 1115161361530041620, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1648066348683378315, guid: f484b582ded1be84baa4f91fcaedfbfb,
         type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168565569075235401, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6103844609516298641, guid: f484b582ded1be84baa4f91fcaedfbfb,
         type: 3}
@@ -5201,11 +5187,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6103844610062727854, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7523970630816047568, guid: f484b582ded1be84baa4f91fcaedfbfb,
         type: 3}
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7835805433462613424, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592266733058961225, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592266733058961227, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 88132d8a675de904e91fd16e0000cd55, type: 2}
     - target: {fileID: 9043518884087446149, guid: f484b582ded1be84baa4f91fcaedfbfb,
         type: 3}
       propertyPath: m_Color.a
