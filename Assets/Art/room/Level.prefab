@@ -1874,7 +1874,7 @@ GameObject:
   - component: {fileID: 1944619407}
   - component: {fileID: 1944619406}
   - component: {fileID: 1944619409}
-  - component: {fileID: 9044257215515545429}
+  - component: {fileID: 1601809756187384214}
   m_Layer: 0
   m_Name: CheckOverThereDialogue
   m_TagString: Untagged
@@ -1974,7 +1974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oneTimeDialogue: 1
   dialogueTreeToPlay: CheckOverThere
---- !u!114 &9044257215515545429
+--- !u!114 &1601809756187384214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1998,16 +1998,14 @@ MonoBehaviour:
         y: 87.8
         width: 150
         height: 125
-      Text: '@Ana Angry
-
-        @Wait
+      Text: '@Ana angry
 
         @Ana fadeIn
 
         @Start
 
-        Where
-        the hell do you think you are going?'
+        Where the hell
+        do you think you are going?'
       Type: 0
       NodeType: 0
       Parent: -1
