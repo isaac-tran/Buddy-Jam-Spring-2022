@@ -1,5 +1,1111 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &361232808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 361232809}
+  - component: {fileID: 361232811}
+  - component: {fileID: 361232812}
+  - component: {fileID: 361232810}
+  m_Layer: 0
+  m_Name: Opening Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &361232809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361232808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1147328239}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &361232811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361232808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &361232812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361232808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 32
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 271.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: '@bg fullOpaque
+
+        @dialog fadeIn
+
+        @Ana fadeIn
+
+        ...'
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 1
+      TriggerText: 
+      Connections: 02000000
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 431.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: "Wha\u2026 where am I?"
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 1
+      TriggerText: Player
+      Connections: 03000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 591.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: "Why is it so dark all of a sudden? Was I always here? Something isn\u2019t
+        right\u2026\r"
+      Type: 0
+      NodeType: 1
+      Parent: 2
+      Trigger: 1
+      TriggerText: Player
+      Connections: 04000000
+    - ID: 4
+      Size:
+        serializedVersion: 2
+        x: 751.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: "UGH! Just great\u2026\r"
+      Type: 0
+      NodeType: 1
+      Parent: 3
+      Trigger: 1
+      TriggerText: Mysterious Female Voice
+      Connections: 05000000
+    - ID: 5
+      Size:
+        serializedVersion: 2
+        x: 911.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: '...Wow. Now not only is it dark here but I''m also hearing voices. Am
+        I in reverse heaven?
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 4
+      Trigger: 1
+      TriggerText: Player
+      Connections: 06000000
+    - ID: 6
+      Size:
+        serializedVersion: 2
+        x: 1071.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: "\u2026First I got kicked out of my chamber unwillingly and now I ran
+        out places to put scratches in this damn place. Aargh! I\u2019m so done with
+        this.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 5
+      Trigger: 1
+      TriggerText: Mysterious Female Voice
+      Connections: 07000000
+    - ID: 7
+      Size:
+        serializedVersion: 2
+        x: 1231.2
+        y: 156.8
+        width: 150
+        height: 125
+      Text: Who's there?
+      Type: 0
+      NodeType: 1
+      Parent: 6
+      Trigger: 1
+      TriggerText: Player
+      Connections: 08000000
+    - ID: 8
+      Size:
+        serializedVersion: 2
+        x: 1231.2
+        y: 295.8
+        width: 150
+        height: 125
+      Text: Please tell me if there are any more spots to scratch. Just one.
+      Type: 0
+      NodeType: 1
+      Parent: -2
+      Trigger: 1
+      TriggerText: Mysterious Female Voice
+      Connections: 09000000
+    - ID: 9
+      Size:
+        serializedVersion: 2
+        x: 1067.2
+        y: 296.8
+        width: 150
+        height: 125
+      Text: "Oh my god\u2026 there's a real ghost here! I'm really in reverse heaven."
+      Type: 0
+      NodeType: 1
+      Parent: 8
+      Trigger: 1
+      TriggerText: Player
+      Connections: 0a000000
+    - ID: 10
+      Size:
+        serializedVersion: 2
+        x: 908.19995
+        y: 297.8
+        width: 150
+        height: 125
+      Text: "Who said\u2026 that? You dare try to insult me! \u2018The One True Demon
+        Lord\u2019 - Anastasia."
+      Type: 0
+      NodeType: 1
+      Parent: 9
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 0b000000
+    - ID: 11
+      Size:
+        serializedVersion: 2
+        x: 751.19995
+        y: 295.8
+        width: 150
+        height: 125
+      Text: ...
+      Type: 0
+      NodeType: 1
+      Parent: 10
+      Trigger: 1
+      TriggerText: Player
+      Connections: 0c000000
+    - ID: 12
+      Size:
+        serializedVersion: 2
+        x: 587.19995
+        y: 295.8
+        width: 150
+        height: 125
+      Text: "Whom I\u2019m kidding, no matter what I say or do. You\u2019re just
+        a hallucination."
+      Type: 0
+      NodeType: 1
+      Parent: 11
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 19000000
+    - ID: 22
+      Size:
+        serializedVersion: 2
+        x: 267.19995
+        y: 289.8
+        width: 150
+        height: 125
+      Text: 'Well, if you insist that you are not a hallucination, then prove it!
+        If you find something I can write before me, I''ll believe you!
+
+        @bg
+        fadeOut
+
+        @Ana fadeOut
+
+        @End'
+      Type: 0
+      NodeType: 2
+      Parent: -2
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 
+    - ID: 25
+      Size:
+        serializedVersion: 2
+        x: 429.19995
+        y: 291.8
+        width: 150
+        height: 125
+      Text: "I\u2019m not a hallucination, I\u2019m a real person."
+      Type: 0
+      NodeType: 1
+      Parent: 12
+      Trigger: 1
+      TriggerText: Player
+      Connections: 16000000
+  CurrentSet: 0
+  TabList:
+  - Opening
+--- !u!114 &361232810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361232808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e5d91bc79719847af68399e73bfd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoStart: 1
+  tree: Opening
+--- !u!1 &1007983402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007983403}
+  - component: {fileID: 1007983404}
+  - component: {fileID: 1007983405}
+  m_Layer: 0
+  m_Name: Main Story Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1007983403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007983402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1147328239}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1007983404
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007983402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1007983405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007983402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 0
+    NewWindowOpen: 0
+    FirstWindow: -562
+    Windows: []
+  CurrentSet: 0
+  TabList:
+  - GiveDiaryToAnastasia
+--- !u!1 &1147328238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147328239}
+  m_Layer: 0
+  m_Name: Dialogues (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1147328239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147328238}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2106759167}
+  - {fileID: 361232809}
+  - {fileID: 1007983403}
+  - {fileID: 1505110393}
+  m_Father: {fileID: 4369490555415971669}
+  m_RootOrder: 50
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1505110391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505110393}
+  - component: {fileID: 1505110392}
+  m_Layer: 0
+  m_Name: Anastasias Diary Dialogues
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1505110393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505110391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1147328239}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1505110392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505110391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 1
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 482.2
+        y: 97.8
+        width: 150
+        height: 125
+      Text: "@Start\n@Ana angry\nOh, congratulations! You're a fool trying to kill
+        me now\u2026 even though I\u2019m already am like\u2026 very long time ago.
+        Ugh\u2026 I\u2019ve lost track of how many years it\u2019s been.\r\n@End"
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 
+  - CurrentId: 24
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 507.2
+        y: 66.8
+        width: 150
+        height: 125
+      Text: "@Start\nWait\u2026 how did you\u2026 get through? It\u2019s blocked.
+        There\u2019s no way you can do that."
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 01000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 667.2
+        y: 66.8
+        width: 150
+        height: 125
+      Text: "What do you mean? There\u2019s a passage that took me to your chamber.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 1
+      TriggerText: Player
+      Connections: 02000000
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 830.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: "That\u2019s impossible. That means\u2026 you can just walk through just
+        like that!? If that\u2019s the case then does that mean\u2026 you\u2019re
+        real\u2026\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 1
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 03000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 990.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: 'Yeah, I am real.
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 2
+      Trigger: 1
+      TriggerText: Player
+      Connections: 04000000
+    - ID: 4
+      Size:
+        serializedVersion: 2
+        x: 1150.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: "Oh my\u2026 I\u2026 I\u2026 thought you\u2026\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 3
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 05000000
+    - ID: 5
+      Size:
+        serializedVersion: 2
+        x: 1309.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: Thought what?
+      Type: 0
+      NodeType: 1
+      Parent: 4
+      Trigger: 1
+      TriggerText: Player
+      Connections: 06000000
+    - ID: 6
+      Size:
+        serializedVersion: 2
+        x: 1469.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: "No. It has to be a trick or something. Look, what do you want from me\u2026
+        I lost everything over the past 1000 years and at this point\u2026 I\u2019m
+        numb to anything that you throw at me.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 5
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 07000000
+    - ID: 7
+      Size:
+        serializedVersion: 2
+        x: 1629.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: Not everything.
+      Type: 0
+      NodeType: 1
+      Parent: 6
+      Trigger: 1
+      TriggerText: Player
+      Connections: 08000000
+    - ID: 8
+      Size:
+        serializedVersion: 2
+        x: 1789.2
+        y: 67.8
+        width: 150
+        height: 125
+      Text: 'The player gives the diary back to Anastasia.
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 7
+      Trigger: 1
+      TriggerText: ' '
+      Connections: 09000000
+    - ID: 9
+      Size:
+        serializedVersion: 2
+        x: 1788.2
+        y: 211.8
+        width: 150
+        height: 125
+      Text: What the hell! Did you go to my chamber and find this!?
+      Type: 0
+      NodeType: 1
+      Parent: 8
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 0a000000
+    - ID: 10
+      Size:
+        serializedVersion: 2
+        x: 1627.2
+        y: 215.8
+        width: 150
+        height: 125
+      Text: 'Yeah, I did. It looked important.
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 9
+      Trigger: 0
+      TriggerText: 
+      Connections: 0b000000
+    - ID: 11
+      Size:
+        serializedVersion: 2
+        x: 1462.2
+        y: 218.8
+        width: 150
+        height: 125
+      Text: "To me, yes. Not to you. Wait\u2026 did you\u2026 read it?"
+      Type: 0
+      NodeType: 1
+      Parent: 10
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 0c000000
+    - ID: 12
+      Size:
+        serializedVersion: 2
+        x: 1299.2
+        y: 222.8
+        width: 150
+        height: 125
+      Text: ...
+      Type: 0
+      NodeType: 1
+      Parent: 11
+      Trigger: 0
+      TriggerText: 
+      Connections: 0d000000
+    - ID: 13
+      Size:
+        serializedVersion: 2
+        x: 1133.2
+        y: 223.8
+        width: 150
+        height: 125
+      Text: "Oh my demon lord! You read it, didn\u2019t you? Just great, my title
+        of being \u2018The One True Demon Lord\u2019 is now down the poophole.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 12
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 0e000000
+    - ID: 14
+      Size:
+        serializedVersion: 2
+        x: 967.19995
+        y: 225.8
+        width: 150
+        height: 125
+      Text: "It can\u2019t be that bad."
+      Type: 0
+      NodeType: 1
+      Parent: 13
+      Trigger: 0
+      TriggerText: 
+      Connections: 0f000000
+    - ID: 15
+      Size:
+        serializedVersion: 2
+        x: 800.19995
+        y: 225.8
+        width: 150
+        height: 125
+      Text: "Oh really!? You wouldn\u2019t like it if I read your diary or journal
+        or whatever you write!\n"
+      Type: 0
+      NodeType: 1
+      Parent: 14
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 10000000
+    - ID: 16
+      Size:
+        serializedVersion: 2
+        x: 629.19995
+        y: 225.8
+        width: 150
+        height: 125
+      Text: ...
+      Type: 0
+      NodeType: 1
+      Parent: 15
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 11000000
+    - ID: 17
+      Size:
+        serializedVersion: 2
+        x: 454.19995
+        y: 226.8
+        width: 150
+        height: 125
+      Text: "That\u2019s beside the point. If you can move through this magic at
+        ease then. There\u2019s a possible way of getting outta here.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 16
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 12000000
+    - ID: 18
+      Size:
+        serializedVersion: 2
+        x: 443.19995
+        y: 377.8
+        width: 150
+        height: 125
+      Text: "Yeah. Maybe there\u2019s a way to put you in peace."
+      Type: 0
+      NodeType: 1
+      Parent: 17
+      Trigger: 0
+      TriggerText: 
+      Connections: 13000000
+    - ID: 19
+      Size:
+        serializedVersion: 2
+        x: 621.19995
+        y: 377.8
+        width: 150
+        height: 125
+      Text: I guess. What can you see that I can't?
+      Type: 0
+      NodeType: 1
+      Parent: 18
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 14000000
+    - ID: 20
+      Size:
+        serializedVersion: 2
+        x: 802.19995
+        y: 381.8
+        width: 150
+        height: 125
+      Text: Well, you saw me come through. Are there any routes that you may know?
+      Type: 0
+      NodeType: 1
+      Parent: 19
+      Trigger: 0
+      TriggerText: 
+      Connections: 15000000
+    - ID: 21
+      Size:
+        serializedVersion: 2
+        x: 980.19995
+        y: 382.8
+        width: 150
+        height: 125
+      Text: 'There was a secret passage hidden between the throne room and my chamber
+        in case of emergencies that may work. But it can only be unlocked back in
+        my chamber. You probably have to head back there and figure out a way to
+        unlock it for me.
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 20
+      Trigger: 1
+      TriggerText: Anastasia
+      Connections: 16000000
+    - ID: 22
+      Size:
+        serializedVersion: 2
+        x: 1155.2
+        y: 381.8
+        width: 150
+        height: 125
+      Text: "I\u2019ll see what\u2019s there.\r\n"
+      Type: 0
+      NodeType: 1
+      Parent: 21
+      Trigger: 0
+      TriggerText: 
+      Connections: 17000000
+    - ID: 23
+      Size:
+        serializedVersion: 2
+        x: 1315.2
+        y: 381.8
+        width: 150
+        height: 125
+      Text: '@bg fadeIn
+
+        To be continued...
+
+        @End'
+      Type: 0
+      NodeType: 2
+      Parent: 22
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+  - CurrentId: 1
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 221.20001
+        y: 82.8
+        width: 150
+        height: 125
+      Text: '@Start
+
+        ...Great, now this hallucination is standing in front
+        of me. Go haunt the corner or something. Shoo.
+
+        @End'
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+  CurrentSet: 1
+  TabList:
+  - PassageToChamberRevealed
+  - SeeAnaAfterEnteringChamber
+  - HasNotAcquiredDiary
+--- !u!1 &2106759166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2106759167}
+  - component: {fileID: 2106759170}
+  - component: {fileID: 2106759169}
+  - component: {fileID: 2106759168}
+  m_Layer: 0
+  m_Name: ExampleDialogue (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2106759167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106759166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1147328239}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2106759170
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106759166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2106759169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106759166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 12
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 250
+        y: 201
+        width: 150
+        height: 125
+      Text: '@bg fullOpaque
+
+        @dialog fadeIn
+
+        default...@WaitInput
+
+        @Ana
+        angry
+
+        angry...@WaitInput
+
+        @Ana concerned
+
+        concerned...@WaitInput
+
+        @Ana
+        content
+
+        content...@WaitInput
+
+        @Ana happy
+
+        happy...
+
+        @WaitInput
+
+        @Ana
+        neutral
+
+        neutral...@WaitInput
+
+        @Ana pissed
+
+        pissed...@WaitInput
+
+        @Ana
+        sassy
+
+        sassy...@WaitInput
+
+        @Ana scared
+
+        scared...@WaitInput
+
+        @Ana
+        shouting
+
+        shouting...@WaitInput
+
+        @Ana conteeent
+
+        conteeent
+
+        @WaitInput
+
+        @Ana
+        pos_left
+
+        pos_left...@WaitInput
+
+        @Ana pos_right
+
+        pos_right...@WaitInput
+
+        @Ana
+        pos_center
+
+        pos_center...@WaitInput
+
+        @Ana pos_center_zoomIn
+
+        pos_center_zoomIn...@WaitInput
+
+        @Ana
+        pos_center_zoomOut
+
+        pos_center_zoomOut...'
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 0
+      TriggerText: 
+      Connections: 01000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 465
+        y: 207
+        width: 150
+        height: 125
+      Text: '@EnableSkip
+
+        !!!!!!!!!!!!'
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 02000000
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 625
+        y: 207
+        width: 150
+        height: 125
+      Text: '@Ana happy
+
+        <b><size=120%>Hi!</size></b>
+
+        @Wait
+
+        @WaitInput
+
+        I''m
+        <cspace=1em><color="red">Anastasia</color></cspace>! Nice to meet you!
+
+        @SetName
+        Ana Anastasia
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 1
+      Trigger: 1
+      TriggerText: Ana
+      Connections: 03000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 785
+        y: 207
+        width: 150
+        height: 125
+      Text: '@Ana default
+
+        I''m currently just a <#0000FF>placeholder</color>,
+        but I hope we can get along for now!'
+      Type: 0
+      NodeType: 1
+      Parent: 2
+      Trigger: 1
+      TriggerText: Ana
+      Connections: 0b000000
+    - ID: 11
+      Size:
+        serializedVersion: 2
+        x: 945
+        y: 207
+        width: 150
+        height: 125
+      Text: '@bg fadeOut
+
+        @dialog fadeOut
+
+        @Ana fadeOut'
+      Type: 0
+      NodeType: 2
+      Parent: 3
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+  CurrentSet: 0
+  TabList:
+  - init
+--- !u!114 &2106759168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106759166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e5d91bc79719847af68399e73bfd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoStart: 1
+  tree: init
 --- !u!1 &1091342864462184250
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +1526,7 @@ Transform:
   - {fileID: 917530372311057724}
   - {fileID: 5210552882900640612}
   - {fileID: 6222316713499436413}
+  - {fileID: 1147328239}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1180,7 +2287,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.61947197, b: 0, a: 1}
+  m_Color: {r: 0.85882354, g: 0.48235294, b: 0.3019608, a: 1}
   m_Intensity: 3
   m_Range: 20
   m_SpotAngle: 30
@@ -1344,7 +2451,7 @@ MeshCollider:
   m_GameObject: {fileID: 4874484781972787247}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -1588,7 +2695,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.6821606, b: 0, a: 1}
+  m_Color: {r: 0.85882354, g: 0.48235294, b: 0.3019608, a: 1}
   m_Intensity: 3
   m_Range: 20
   m_SpotAngle: 30
@@ -5719,6 +6826,63 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2150508615648982876}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7646559495659635902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8630635661516501986, guid: d92bf32d2c98cac43b857434b694baf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150508615648982876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2150508616232782431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646559495659635902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 1
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 345.2
+        y: 70.8
+        width: 150
+        height: 125
+      Text: 
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+  CurrentSet: 0
+  TabList:
+  - Flask
+--- !u!114 &2150508616232782432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646559495659635902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f023ef40c6257458caeb2203541051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: 
+  interactionRadius: 5
+  Interacted: 0
+  prevPosBeforePutInMagicCircle: {x: 0, y: 0, z: 0}
+  isInsideTheCircle: 0
 --- !u!1001 &2150508615666196199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9116,6 +10280,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.018554585, y: 0.017404258, z: 0.30064872}
   m_Center: {x: -0.00000001994731, y: -0.000000013394226, z: 0.15032436}
+--- !u!1 &937678600975464548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8008691473789735485, guid: e6c98b27cf087624880ac80ede8a47f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150508616580371879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &540748525
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937678600975464548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 723d4b3bff632c1489d5aa0e9608a6a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1060495377096198184 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1400486290137537935, guid: e6c98b27cf087624880ac80ede8a47f8,
@@ -9205,6 +10395,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.018554585, y: 0.017404268, z: 0.30064875}
   m_Center: {x: 0.0000000042670765, y: -0.000000027829728, z: 0.15032437}
+--- !u!1 &3697442186044840230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357380906390097025, guid: e6c98b27cf087624880ac80ede8a47f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150508616580371879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2150508616232782435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3697442186044840230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360949ff0af49ce4e89eb5addf367b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateDuration: 3
 --- !u!4 &4245907946964843292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6398389143777808709, guid: e6c98b27cf087624880ac80ede8a47f8,
@@ -9230,6 +10439,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020106526, y: 0.01885999, z: 0.29171795}
   m_Center: {x: 0.0000000098804165, y: -0.0000000038214503, z: 0.14585897}
+--- !u!1 &5088128390416065791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2646834682340773544, guid: e6c98b27cf087624880ac80ede8a47f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150508616580371879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2150508616232782436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5088128390416065791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551669b8fe1802e4b97617e706178d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateDuration: 3
 --- !u!1 &6832045848853201869 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4393145227173210518, guid: e6c98b27cf087624880ac80ede8a47f8,
@@ -9249,6 +10477,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02017591, y: 0.020360742, z: 0.055177573}
   m_Center: {x: -0.000000058702632, y: -0.000000032788463, z: 0.027559973}
+--- !u!1 &6861115599419096337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4823267756788197558, guid: e6c98b27cf087624880ac80ede8a47f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150508616580371879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &877482648
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6861115599419096337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2589354917343601267, guid: e6c98b27cf087624880ac80ede8a47f8, type: 3}
 --- !u!1 &7532342078870794101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -770004455266272558, guid: e6c98b27cf087624880ac80ede8a47f8,
@@ -17405,6 +18653,109 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8417914625793036752}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &896873623095376618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8691988024947501882, guid: f12da5033e1dfb04ea12508dad1b8c06,
+    type: 3}
+  m_PrefabInstance: {fileID: 8417914625793036752}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &247204731
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896873623095376618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3537709356157935800, guid: d5b0f9a4755203b4b841b34f452bb13c, type: 3}
+--- !u!114 &247204726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896873623095376618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1203d3a9649152f48ac2fd34adfb204c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: ???
+  interactionRadius: 5
+  Interacted: 0
+  dialogueTree: PickUpDiary
+--- !u!114 &247204727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896873623095376618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 3
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 459.2
+        y: 116.8
+        width: 150
+        height: 125
+      Text: "@Start\nIs this her diary? Looks like there\u2019s at least more than
+        half not written yet. This will do."
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 1
+      TriggerText: Player
+      Connections: 01000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 619.2
+        y: 116.8
+        width: 150
+        height: 125
+      Text: 'Obtained <#0000FF> Anastasia''s diary</color>.
+
+'
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 02000000
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 779.2
+        y: 116.8
+        width: 150
+        height: 125
+      Text: 'Hm...? I can sense some magic around here. Did something get enchanted?
+
+        @End'
+      Type: 0
+      NodeType: 2
+      Parent: 1
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+  CurrentSet: 0
+  TabList:
+  - PickUpDiary
 --- !u!1001 &8620834192769246029
 PrefabInstance:
   m_ObjectHideFlags: 0
