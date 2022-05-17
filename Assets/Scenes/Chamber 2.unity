@@ -2150,7 +2150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: 
-  interactionRadius: 5
+  interactionRadius: 9
   Interacted: 0
   dialogueTree: Note3
 --- !u!114 &578739790
@@ -3764,7 +3764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: 
-  interactionRadius: 5
+  interactionRadius: 9
   Interacted: 0
   dialogueTree: Note1
 --- !u!114 &1491953032
@@ -3940,7 +3940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: 
-  interactionRadius: 5
+  interactionRadius: 9
   Interacted: 0
   dialogueTree: Note2
 --- !u!114 &1591366689
@@ -5085,6 +5085,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700546411208135634, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199827258072030672, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767580899359828118, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6103844609516298641, guid: f484b582ded1be84baa4f91fcaedfbfb,
         type: 3}
