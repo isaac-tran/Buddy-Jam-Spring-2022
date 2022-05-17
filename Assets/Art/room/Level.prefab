@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 361232809}
   - component: {fileID: 361232811}
-  - component: {fileID: 361232812}
-  - component: {fileID: 361232810}
+  - component: {fileID: 6015553035985104623}
+  - component: {fileID: 6804445464862632406}
   m_Layer: 0
   m_Name: Opening Dialogue
   m_TagString: Untagged
@@ -47,7 +47,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &361232812
+--- !u!114 &6015553035985104623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361232808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e5d91bc79719847af68399e73bfd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoStart: 1
+  tree: Opening
+--- !u!114 &6804445464862632406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,9 +87,9 @@ MonoBehaviour:
         height: 125
       Text: '@bg fullOpaque
 
-        @dialog fadeIn
+        @Start
 
-        @Ana fadeIn
+        @Wait
 
         ...'
       Type: 0
@@ -125,7 +139,7 @@ MonoBehaviour:
       NodeType: 1
       Parent: 3
       Trigger: 1
-      TriggerText: Mysterious Female Voice
+      TriggerText: Ana
       Connections: 05000000
     - ID: 5
       Size:
@@ -152,13 +166,13 @@ MonoBehaviour:
         width: 150
         height: 125
       Text: "\u2026First I got kicked out of my chamber unwillingly and now I ran
-        out places to put scratches in this damn place. Aargh! I\u2019m so done with
-        this.\r\n"
+        out of places to put scratches in this damn place. Aargh! I\u2019m so done
+        with this.\r\n"
       Type: 0
       NodeType: 1
       Parent: 5
       Trigger: 1
-      TriggerText: Mysterious Female Voice
+      TriggerText: Ana
       Connections: 07000000
     - ID: 7
       Size:
@@ -181,12 +195,17 @@ MonoBehaviour:
         y: 295.8
         width: 150
         height: 125
-      Text: Please tell me if there are any more spots to scratch. Just one.
+      Text: 'Please tell me if there are any more spots to scratch. Just one.
+
+        @Ana
+        concerned
+
+        @Ana fadeIn'
       Type: 0
       NodeType: 1
       Parent: -2
       Trigger: 1
-      TriggerText: Mysterious Female Voice
+      TriggerText: Ana
       Connections: 09000000
     - ID: 9
       Size:
@@ -195,7 +214,8 @@ MonoBehaviour:
         y: 296.8
         width: 150
         height: 125
-      Text: "Oh my god\u2026 there's a real ghost here! I'm really in reverse heaven."
+      Text: "@WaitInput\nOh my god\u2026 there's a real ghost here! I'm really in
+        reverse heaven."
       Type: 0
       NodeType: 1
       Parent: 8
@@ -209,13 +229,13 @@ MonoBehaviour:
         y: 297.8
         width: 150
         height: 125
-      Text: "Who said\u2026 that? You dare try to insult me! \u2018The One True Demon
-        Lord\u2019 - Anastasia."
+      Text: "@Ana pissed\nWho said\u2026 that? You dare try to insult me! \u2018The
+        One True Demon Lord\u2019 - Anastasia.\n@SetName Ana Anastasia"
       Type: 0
       NodeType: 1
       Parent: 9
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 0b000000
     - ID: 11
       Size:
@@ -238,13 +258,13 @@ MonoBehaviour:
         y: 295.8
         width: 150
         height: 125
-      Text: "Whom I\u2019m kidding, no matter what I say or do. You\u2019re just
-        a hallucination."
+      Text: "@Ana neutral\nWhom I\u2019m kidding, no matter what I say or do. You\u2019re
+        just a hallucination."
       Type: 0
       NodeType: 1
       Parent: 11
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 19000000
     - ID: 22
       Size:
@@ -253,20 +273,18 @@ MonoBehaviour:
         y: 289.8
         width: 150
         height: 125
-      Text: 'Well, if you insist that you are not a hallucination, then prove it!
-        If you find something I can write before me, I''ll believe you!
+      Text: '@Ana sassy
 
-        @bg
-        fadeOut
-
-        @Ana fadeOut
+        if you insist that you are not a hallucination,
+        then prove it! If you can find me something to write on, then I might believe
+        you!
 
         @End'
       Type: 0
       NodeType: 2
       Parent: -2
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 
     - ID: 25
       Size:
@@ -285,20 +303,6 @@ MonoBehaviour:
   CurrentSet: 0
   TabList:
   - Opening
---- !u!114 &361232810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361232808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e5d91bc79719847af68399e73bfd37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoStart: 1
-  tree: Opening
 --- !u!1 &481607605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4315,6 +4319,41 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5981,6 +6020,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
@@ -12734,6 +12808,41 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14676,6 +14785,41 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -15213,6 +15357,41 @@ PrefabInstance:
     - target: {fileID: 5966554706322530057, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
@@ -16010,6 +16189,41 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_IsActive
@@ -16370,6 +16584,41 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -16584,6 +16833,41 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -16701,6 +16985,41 @@ PrefabInstance:
     - target: {fileID: 5966554706322530057, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
@@ -17364,6 +17683,41 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17489,6 +17843,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
@@ -17972,6 +18361,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
@@ -19409,6 +19833,41 @@ PrefabInstance:
     - target: {fileID: 5966554706322530057, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
@@ -20960,6 +21419,41 @@ PrefabInstance:
       propertyPath: m_BoundingSphereOverride.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21283,6 +21777,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_Version
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_ShadowLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_LightCookieSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_UsePipelineSettings
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8493842591342349994, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
