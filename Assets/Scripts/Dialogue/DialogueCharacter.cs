@@ -13,17 +13,15 @@ public class DialogueCharacter : MonoBehaviour
     public Animator animator;
     public string defaultImage = "default";
 
-    [Space(10)]
-    [Header("Debug Mode")]
-    [SerializeField] private Image portraitCurrent;
-    [SerializeField] private Image portraitNew;
-    [SerializeField] private static float animationSpeed = 0.1f;
-    [SerializeField] private bool isAnimating = false;
-    [SerializeField] private bool isSkipping = false;
-    [SerializeField] public bool isFadedOut = true;
+    private Image portraitCurrent;
+    private Image portraitNew;
+    private static float animationSpeed = 0.1f;
+    private bool isAnimating = false;
+    private bool isSkipping = false;
+    public bool isVisible = true;
 
 
-    [SerializeField] private List<Image> _images = new List<Image>();
+    private List<Image> _images = new List<Image>();
 
     private int animationCount = 0;
 

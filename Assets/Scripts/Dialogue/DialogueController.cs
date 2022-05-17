@@ -56,13 +56,14 @@ public class DialogueController : MonoBehaviour
 
     private void Awake()
     {
-        characters = GetComponentsInChildren<DialogueCharacter>();  
+        characters = GetComponentsInChildren<DialogueCharacter>();
         foreach (DialogueCharacter c in characters)
         {
             c.onAnimationsEnded.AddListener(OnAnimationFinished);
         }
         text.onTrigger.AddListener(OnTextTrigger);
         text.onFinished.AddListener(OnTextFinished);
+
 
         //PlayTree("init");
     }
@@ -283,9 +284,10 @@ public class DialogueController : MonoBehaviour
 
         isFinished = true;
 
+        
         foreach(DialogueCharacter c in characters)
         {
-            if(!c.isFadedOut)
+            if(c.isVisible)
             {
                 c.Play("fadeOut");
             }
