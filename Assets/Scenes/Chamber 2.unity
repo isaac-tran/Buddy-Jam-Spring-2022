@@ -2179,26 +2179,14 @@ MonoBehaviour:
         height: 125
       Text: '@Start
 
-        @Note shouting'
+        @SetImage Note concerned
+
+        @End'
       Type: 0
       NodeType: 0
       Parent: -1
-      Trigger: 0
-      TriggerText: 
-      Connections: 01000000
-    - ID: 1
-      Size:
-        serializedVersion: 2
-        x: 494.2
-        y: 94.8
-        width: 150
-        height: 125
-      Text: '@End'
-      Type: 0
-      NodeType: 2
-      Parent: 0
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Note
       Connections: 
   CurrentSet: 0
   TabList:
@@ -3805,26 +3793,14 @@ MonoBehaviour:
         height: 125
       Text: '@Start
 
-        @Note happy'
+        @SetImage Note default
+
+        @End'
       Type: 0
       NodeType: 0
       Parent: -1
-      Trigger: 0
-      TriggerText: 
-      Connections: 01000000
-    - ID: 1
-      Size:
-        serializedVersion: 2
-        x: 495.2
-        y: 225.79999
-        width: 150
-        height: 125
-      Text: '@End'
-      Type: 0
-      NodeType: 2
-      Parent: 0
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Note
       Connections: 
   CurrentSet: 0
   TabList:
@@ -3993,26 +3969,14 @@ MonoBehaviour:
         height: 125
       Text: '@Start
 
-        @Note scared'
+        @SetImage Note angry
+
+        @End'
       Type: 0
       NodeType: 0
       Parent: -1
-      Trigger: 0
-      TriggerText: 
-      Connections: 01000000
-    - ID: 1
-      Size:
-        serializedVersion: 2
-        x: 419.2
-        y: 138.8
-        width: 150
-        height: 125
-      Text: '@End'
-      Type: 0
-      NodeType: 2
-      Parent: 0
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Note
       Connections: 
   CurrentSet: 0
   TabList:
@@ -5105,6 +5069,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 696233125, guid: f484b582ded1be84baa4f91fcaedfbfb, type: 3}
+      propertyPath: m_Name
+      value: angry
+      objectReference: {fileID: 0}
+    - target: {fileID: 859932850, guid: f484b582ded1be84baa4f91fcaedfbfb, type: 3}
+      propertyPath: m_Name
+      value: concerned
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465298102, guid: f484b582ded1be84baa4f91fcaedfbfb, type: 3}
+      propertyPath: m_Name
+      value: default
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648066348683378315, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6103844609516298641, guid: f484b582ded1be84baa4f91fcaedfbfb,
         type: 3}
       propertyPath: playerController
@@ -5219,6 +5200,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523970630816047568, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043518884087446149, guid: f484b582ded1be84baa4f91fcaedfbfb,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f484b582ded1be84baa4f91fcaedfbfb, type: 3}
