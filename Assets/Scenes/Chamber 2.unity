@@ -725,8 +725,8 @@ MonoBehaviour:
   riddle2Dialogues: {fileID: 483543411}
   riddle3Dialogues: {fileID: 0}
   acquiredDiary: 0
-  fireplace: {fileID: 0}
-  backdoorToAnaChamber: {fileID: 0}
+  fireplace: {fileID: 1586901191}
+  backdoorToAnaChamber: {fileID: 1948043869}
   key1: 0
   key2: 0
   key3: 0
@@ -3790,6 +3790,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1586901191 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2150508616232782436, guid: 62dbea4c6d3fcf949bbfe9f5c60a87ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150508616232782429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551669b8fe1802e4b97617e706178d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1700103246
 GameObject:
   m_ObjectHideFlags: 0
@@ -4647,6 +4659,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1943104365}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1948043869 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2150508616232782435, guid: 62dbea4c6d3fcf949bbfe9f5c60a87ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150508616232782429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360949ff0af49ce4e89eb5addf367b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1993665681 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 361232808, guid: 62dbea4c6d3fcf949bbfe9f5c60a87ac,
