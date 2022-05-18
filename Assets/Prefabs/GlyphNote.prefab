@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6585935403197066704}
   - component: {fileID: 7425951146068272867}
   m_Layer: 5
-  m_Name: glyph2
+  m_Name: note2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 2112424139574931248}
   - component: {fileID: 6817265047849312764}
   m_Layer: 5
-  m_Name: glyph1
+  m_Name: note1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 3823559600429113770}
   - component: {fileID: 5960596857250788663}
   m_Layer: 5
-  m_Name: glyph3
+  m_Name: note3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

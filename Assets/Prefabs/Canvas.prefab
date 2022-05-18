@@ -719,7 +719,7 @@ PrefabInstance:
     - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 7069541451036577795, guid: 0f4d4ba9234a20a46aea0027b086f252,
         type: 3}
@@ -970,7 +970,7 @@ PrefabInstance:
     - target: {fileID: 7272229340620057513, guid: 7c6393b6e56667041a84c30819cef659,
         type: 3}
       propertyPath: m_Name
-      value: glyph
+      value: note1
       objectReference: {fileID: 0}
     - target: {fileID: 7425951146068272867, guid: 7c6393b6e56667041a84c30819cef659,
         type: 3}
