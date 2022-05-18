@@ -1379,7 +1379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1505110393}
-  - component: {fileID: 4781625464417622574}
+  - component: {fileID: 223338362140560788}
   m_Layer: 0
   m_Name: Anastasias Diary Dialogues
   m_TagString: Untagged
@@ -1402,7 +1402,7 @@ Transform:
   m_Father: {fileID: 1147328239}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4781625464417622574
+--- !u!114 &223338362140560788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1446,13 +1446,13 @@ MonoBehaviour:
         y: 66.8
         width: 150
         height: 125
-      Text: "@Start\nWait\u2026 how did you\u2026 get through? It\u2019s blocked.
-        There\u2019s no way you can do that."
+      Text: "@Start\n@Ana concerned\n@Ana fadeIn\nWait\u2026 how did you\u2026 get
+        through? It\u2019s blocked. There\u2019s no way you can do that."
       Type: 0
       NodeType: 0
       Parent: -1
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 01000000
     - ID: 1
       Size:
@@ -1475,14 +1475,14 @@ MonoBehaviour:
         y: 67.8
         width: 150
         height: 125
-      Text: "That\u2019s impossible. That means\u2026 you can just walk through just
-        like that!? If that\u2019s the case then does that mean\u2026 you\u2019re
-        real\u2026\r\n"
+      Text: "@Ana scared\nThat\u2019s impossible. That means\u2026 you can just walk
+        through just like that!? If that\u2019s the case then does that mean\u2026
+        you\u2019re real\u2026\r\n"
       Type: 0
       NodeType: 1
       Parent: 1
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 03000000
     - ID: 3
       Size:
@@ -1507,12 +1507,12 @@ MonoBehaviour:
         y: 67.8
         width: 150
         height: 125
-      Text: "Oh my\u2026 I\u2026 I\u2026 thought you\u2026\r\n"
+      Text: "@Ana concerned\nOh my\u2026 I\u2026 I\u2026 thought you\u2026\r\n"
       Type: 0
       NodeType: 1
       Parent: 3
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 05000000
     - ID: 5
       Size:
@@ -1542,7 +1542,7 @@ MonoBehaviour:
       NodeType: 1
       Parent: 5
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 07000000
     - ID: 7
       Size:
@@ -1581,12 +1581,15 @@ MonoBehaviour:
         y: 211.8
         width: 150
         height: 125
-      Text: What the hell! Did you go to my chamber and find this!?
+      Text: '@Ana angry
+
+        What the hell! Did you go to my chamber and find
+        this!?'
       Type: 0
       NodeType: 1
       Parent: 8
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 0a000000
     - ID: 10
       Size:
@@ -1601,8 +1604,8 @@ MonoBehaviour:
       Type: 0
       NodeType: 1
       Parent: 9
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Player
       Connections: 0b000000
     - ID: 11
       Size:
@@ -1611,12 +1614,13 @@ MonoBehaviour:
         y: 218.8
         width: 150
         height: 125
-      Text: "To me, yes. Not to you. Wait\u2026 did you\u2026 read it?"
+      Text: "@Ana content\nTo me, yes. Not to you.\n@WaitInput\n@Ana conteeent\nWait\u2026
+        did you\u2026 read it?"
       Type: 0
       NodeType: 1
       Parent: 10
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 0c000000
     - ID: 12
       Size:
@@ -1629,8 +1633,8 @@ MonoBehaviour:
       Type: 0
       NodeType: 1
       Parent: 11
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Player
       Connections: 0d000000
     - ID: 13
       Size:
@@ -1639,13 +1643,13 @@ MonoBehaviour:
         y: 223.8
         width: 150
         height: 125
-      Text: "Oh my demon lord! You read it, didn\u2019t you? Just great, my title
-        of being \u2018The One True Demon Lord\u2019 is now down the poophole.\r\n"
+      Text: "@Ana scared\nOh my demon lord! You read it, didn\u2019t you? Just great,
+        my title of being \u2018The One True Demon Lord\u2019 is now down the poophole.\r\n"
       Type: 0
       NodeType: 1
       Parent: 12
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 0e000000
     - ID: 14
       Size:
@@ -1658,8 +1662,8 @@ MonoBehaviour:
       Type: 0
       NodeType: 1
       Parent: 13
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Player
       Connections: 0f000000
     - ID: 15
       Size:
@@ -1668,13 +1672,13 @@ MonoBehaviour:
         y: 225.8
         width: 150
         height: 125
-      Text: "Oh really!? You wouldn\u2019t like it if I read your diary or journal
-        or whatever you write!\n"
+      Text: "@Ana shouting\nOh really!? You wouldn\u2019t like it if I read your
+        diary or journal or whatever you write!\n"
       Type: 0
       NodeType: 1
       Parent: 14
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 10000000
     - ID: 16
       Size:
@@ -1688,7 +1692,7 @@ MonoBehaviour:
       NodeType: 1
       Parent: 15
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Player
       Connections: 11000000
     - ID: 17
       Size:
@@ -1697,13 +1701,13 @@ MonoBehaviour:
         y: 226.8
         width: 150
         height: 125
-      Text: "That\u2019s beside the point. If you can move through this magic at
-        ease then. There\u2019s a possible way of getting outta here.\r\n"
+      Text: "@Ana sassy\nThat\u2019s beside the point. If you can move through this
+        magic at ease then. There\u2019s a possible way of getting outta here.\r\n"
       Type: 0
       NodeType: 1
       Parent: 16
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 12000000
     - ID: 18
       Size:
@@ -1716,8 +1720,8 @@ MonoBehaviour:
       Type: 0
       NodeType: 1
       Parent: 17
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Player
       Connections: 13000000
     - ID: 19
       Size:
@@ -1731,7 +1735,7 @@ MonoBehaviour:
       NodeType: 1
       Parent: 18
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 14000000
     - ID: 20
       Size:
@@ -1744,8 +1748,8 @@ MonoBehaviour:
       Type: 0
       NodeType: 1
       Parent: 19
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Player
       Connections: 15000000
     - ID: 21
       Size:
@@ -1754,17 +1758,19 @@ MonoBehaviour:
         y: 382.8
         width: 150
         height: 125
-      Text: 'There was a secret passage hidden between the throne room and my chamber
-        in case of emergencies that may work. But it can only be unlocked back in
-        my chamber. You probably have to head back there and figure out a way to
-        unlock it for me.
+      Text: '@Ana happy
+
+        There was a secret passage hidden between the throne
+        room and my chamber in case of emergencies that may work. But it can only
+        be unlocked back in my chamber. You probably have to head back there and
+        figure out a way to unlock it for me.
 
 '
       Type: 0
       NodeType: 1
       Parent: 20
       Trigger: 1
-      TriggerText: Anastasia
+      TriggerText: Ana
       Connections: 16000000
     - ID: 22
       Size:
@@ -1777,8 +1783,8 @@ MonoBehaviour:
       Type: 0
       NodeType: 1
       Parent: 21
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Player
       Connections: 17000000
     - ID: 23
       Size:
@@ -1795,7 +1801,7 @@ MonoBehaviour:
       Type: 0
       NodeType: 2
       Parent: 22
-      Trigger: 0
+      Trigger: 1
       TriggerText: 
       Connections: 
   - CurrentId: 1
@@ -1818,8 +1824,8 @@ MonoBehaviour:
       Type: 0
       NodeType: 0
       Parent: -1
-      Trigger: 0
-      TriggerText: 
+      Trigger: 1
+      TriggerText: Ana
       Connections: 
   CurrentSet: 0
   TabList:
@@ -6578,7 +6584,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d148c0d2542b1142a4b36fb93491f52,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.00277
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d148c0d2542b1142a4b36fb93491f52,
         type: 3}
@@ -11647,6 +11653,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4369490555415971669}
     m_Modifications:
+    - target: {fileID: -8959803488002771395, guid: e6c98b27cf087624880ac80ede8a47f8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e6c98b27cf087624880ac80ede8a47f8,
         type: 3}
       propertyPath: m_RootOrder
@@ -11738,6 +11749,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8390001806369581338, guid: a21f730fff4a74942a1f9f1df8b2b569,
         type: 3}
+    - target: {fileID: -7359748190147856257, guid: e6c98b27cf087624880ac80ede8a47f8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: -7165196691062932279, guid: e6c98b27cf087624880ac80ede8a47f8,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11848,6 +11864,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -3013320478098088810, guid: e6c98b27cf087624880ac80ede8a47f8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: -2646834682340773544, guid: e6c98b27cf087624880ac80ede8a47f8,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11877,6 +11898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -261524164478727982, guid: e6c98b27cf087624880ac80ede8a47f8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 123051987921042981, guid: e6c98b27cf087624880ac80ede8a47f8,
         type: 3}
@@ -11969,6 +11995,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6768398845764027730, guid: e6c98b27cf087624880ac80ede8a47f8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7149123554257142901, guid: e6c98b27cf087624880ac80ede8a47f8,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12003,6 +12034,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180741313177130818, guid: e6c98b27cf087624880ac80ede8a47f8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 9217234437682292332, guid: e6c98b27cf087624880ac80ede8a47f8,
         type: 3}
@@ -15118,7 +15154,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d148c0d2542b1142a4b36fb93491f52,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -0.00277
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d148c0d2542b1142a4b36fb93491f52,
         type: 3}
@@ -17681,7 +17717,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d148c0d2542b1142a4b36fb93491f52,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.00277
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d148c0d2542b1142a4b36fb93491f52,
         type: 3}
@@ -20622,7 +20658,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d148c0d2542b1142a4b36fb93491f52,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.00277
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d148c0d2542b1142a4b36fb93491f52,
         type: 3}
