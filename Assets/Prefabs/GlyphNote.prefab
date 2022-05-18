@@ -143,7 +143,7 @@ MonoBehaviour:
   textColor: {r: 0, g: 0, b: 0, a: 1}
   headerColor: {r: 0, g: 0, b: 0, a: 1}
   animator: {fileID: 2845194611411799452}
-  defaultImage: default
+  defaultImage: note2
   isVisible: 1
   onAnimationsEnded:
     m_PersistentCalls:

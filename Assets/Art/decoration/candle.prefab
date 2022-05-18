@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1423937037779583117}
   - component: {fileID: 2624768057436852008}
   - component: {fileID: 255011852122078178}
+  - component: {fileID: 2297752361341230922}
+  - component: {fileID: 2209512136615376698}
   m_Layer: 0
   m_Name: candle
   m_TagString: Untagged
@@ -84,6 +86,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2297752361341230922
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767952702260615735}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00060445414, y: 0.00066679507, z: 0.0017456579}
+  m_Center: {x: 0.0000020698935, y: -0.00001310212, z: 0.00083192956}
+--- !u!114 &2209512136615376698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767952702260615735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4a64c4f0aa1694ab02d36ff3fc4575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: 
+  interactionRadius: 5
+  Interacted: 0
+  light: {fileID: 5966554706322530057}
+  onStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  isInteractable: 1
 --- !u!1 &8493842591342349994
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8493842591342349994}
   m_LocalRotation: {x: 0.7071068, y: -0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0.00004268646, y: -0.000044, z: 0.001689}
+  m_LocalPosition: {x: 0.00004268646, y: -0.00004, z: 0.00506}
   m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -135,7 +170,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -168,7 +203,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

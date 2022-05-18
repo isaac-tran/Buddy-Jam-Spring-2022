@@ -176,10 +176,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5605763783296584685}
     m_Modifications:
+    - target: {fileID: 741634643900705948, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324565139603117962, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925129483082118981, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249066160019424222, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3794020542488713875, guid: 0be47aaf894cb45429b3346729d93845,
         type: 3}
       propertyPath: m_Name
       value: bookshelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197651929199114308, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4606268966952976425, guid: 0be47aaf894cb45429b3346729d93845,
         type: 3}
@@ -249,6 +274,36 @@ PrefabInstance:
     - target: {fileID: 4606268966952976425, guid: 0be47aaf894cb45429b3346729d93845,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949545711911424267, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025939713087905614, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610013594913858792, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615343830413080164, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643284459319353631, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757892152408242155, guid: 0be47aaf894cb45429b3346729d93845,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

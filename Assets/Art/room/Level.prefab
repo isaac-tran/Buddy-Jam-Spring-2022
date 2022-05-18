@@ -332,7 +332,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4369490555415971669}
-  m_RootOrder: 51
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7770344207727090229
 MonoBehaviour:
@@ -857,7 +857,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4369490555415971669}
-  m_RootOrder: 53
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!212 &547145827
 SpriteRenderer:
@@ -1172,7 +1172,7 @@ Transform:
   - {fileID: 1007983403}
   - {fileID: 1505110393}
   m_Father: {fileID: 4369490555415971669}
-  m_RootOrder: 50
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1402130881
 GameObject:
@@ -1859,7 +1859,7 @@ Transform:
   - {fileID: 2080659548}
   - {fileID: 2125517406}
   m_Father: {fileID: 4369490555415971669}
-  m_RootOrder: 52
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944619404
 GameObject:
@@ -3011,7 +3011,6 @@ Transform:
   - {fileID: 5751028773076556426}
   - {fileID: 917530372311057724}
   - {fileID: 5210552882900640612}
-  - {fileID: 6222316713499436413}
   - {fileID: 1147328239}
   - {fileID: 481607606}
   - {fileID: 1901171296}
@@ -3019,104 +3018,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2109815054960428051
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6222316713499436413}
-  - component: {fileID: 5581818226533895995}
-  - component: {fileID: 8603722130571160557}
-  - component: {fileID: 217167731261570282}
-  m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &6222316713499436413
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109815054960428051}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.8271244, y: 0.153, z: -6.163}
-  m_LocalScale: {x: 0.21791641, y: 0.21791641, z: 0.21791641}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4369490555415971669}
-  m_RootOrder: 49
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5581818226533895995
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109815054960428051}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8603722130571160557
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109815054960428051}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &217167731261570282
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2109815054960428051}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2150508615360950915
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,7 +5013,7 @@ PrefabInstance:
     - target: {fileID: 8691988024947501882, guid: f12da5033e1dfb04ea12508dad1b8c06,
         type: 3}
       propertyPath: m_Name
-      value: book_closed
+      value: book_howToCookADragon
       objectReference: {fileID: 0}
     - target: {fileID: 8691988024947501882, guid: f12da5033e1dfb04ea12508dad1b8c06,
         type: 3}
@@ -5121,6 +5022,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f12da5033e1dfb04ea12508dad1b8c06, type: 3}
+--- !u!1 &8237396838529861771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8691988024947501882, guid: f12da5033e1dfb04ea12508dad1b8c06,
+    type: 3}
+  m_PrefabInstance: {fileID: 788474947508790193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3228563479805015790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237396838529861771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e603074c06011145a4bf8657584085f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: How to cook a dragon!
+  interactionRadius: 5
+  Interacted: 0
+  dialogueTree: BookDetails
+--- !u!114 &8732540990509652969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237396838529861771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 1
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 550
+        y: 222
+        width: 150
+        height: 125
+      Text: '@Start
+
+        (299 of the 300 pages just talk about how to not get
+        cooked yourself in the first place.)
+
+        @End'
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 1
+      TriggerText: Player
+      Connections: 
+  CurrentSet: 0
+  TabList:
+  - BookDetails
 --- !u!1001 &807975475920929231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6152,6 +6114,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c904ce8f00119bd4f91725233549d2ac, type: 3}
+--- !u!1 &666598950936868669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1767952702260615735, guid: c904ce8f00119bd4f91725233549d2ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 1281621175995395338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6861314474457550072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666598950936868669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4a64c4f0aa1694ab02d36ff3fc4575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: 
+  interactionRadius: 5
+  Interacted: 0
+  light: {fileID: 0}
+  onStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  isInteractable: 1
 --- !u!1001 &1323973113077539134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10293,7 +10281,7 @@ PrefabInstance:
     - target: {fileID: 8691988024947501882, guid: f12da5033e1dfb04ea12508dad1b8c06,
         type: 3}
       propertyPath: m_Name
-      value: book_closed (1)
+      value: book_HowToGiveLifeToAPlushToy
       objectReference: {fileID: 0}
     - target: {fileID: 8691988024947501882, guid: f12da5033e1dfb04ea12508dad1b8c06,
         type: 3}
@@ -10302,6 +10290,79 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f12da5033e1dfb04ea12508dad1b8c06, type: 3}
+--- !u!1 &7311595366147375736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8691988024947501882, guid: f12da5033e1dfb04ea12508dad1b8c06,
+    type: 3}
+  m_PrefabInstance: {fileID: 2150508616122804546}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4732318822927140226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7311595366147375736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 2
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 704
+        y: 258
+        width: 150
+        height: 125
+      Text: '@Start
+
+        (Apparently, you just need to place it in a magic circle,
+        light 3 candles and chant a spell...)'
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 1
+      TriggerText: Player
+      Connections: 01000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 864
+        y: 258
+        width: 150
+        height: 125
+      Text: (But it seems like a few pages have been torn out???)
+      Type: 0
+      NodeType: 2
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+  CurrentSet: 0
+  TabList:
+  - BookDetails
+--- !u!114 &8898808248133400070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7311595366147375736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e603074c06011145a4bf8657584085f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: How to resurrect a plush toy
+  interactionRadius: 5
+  Interacted: 0
+  dialogueTree: BookDetails
 --- !u!1001 &2150508616132241094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17750,17 +17811,17 @@ PrefabInstance:
     - target: {fileID: 5966554706322530057, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_Range
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5966554706322530057, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.5896226
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5966554706322530057, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.76469225
+      value: 0.5803922
       objectReference: {fileID: 0}
     - target: {fileID: 5966554706322530057, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
@@ -17770,7 +17831,7 @@ PrefabInstance:
     - target: {fileID: 5966554706322530057, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7680127729707937330, guid: c904ce8f00119bd4f91725233549d2ac,
         type: 3}
@@ -20794,6 +20855,97 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f12da5033e1dfb04ea12508dad1b8c06, type: 3}
+--- !u!1 &1485499091693728664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8691988024947501882, guid: f12da5033e1dfb04ea12508dad1b8c06,
+    type: 3}
+  m_PrefabInstance: {fileID: 7799575413765707938}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &113721809818808311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485499091693728664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e603074c06011145a4bf8657584085f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Don't panic!
+  interactionRadius: 5
+  Interacted: 0
+  dialogueTree: BookDetails
+--- !u!114 &5279993818721764981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485499091693728664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10fe5d6867c1b5449b4bf163fcd72ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set:
+  - CurrentId: 3
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 478
+        y: 364
+        width: 150
+        height: 125
+      Text: '@Start
+
+        Let''s see...'
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 1
+      TriggerText: Player
+      Connections: 01000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 638
+        y: 364
+        width: 150
+        height: 125
+      Text: 'Page 257:
+
+        "You''re stuck in a secret corridor? Don''t panic!
+        Call 7766...."'
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 1
+      TriggerText: 
+      Connections: 02000000
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 798
+        y: 364
+        width: 150
+        height: 125
+      Text: 'naah, that''s too boring!
+
+        @End'
+      Type: 0
+      NodeType: 2
+      Parent: 1
+      Trigger: 1
+      TriggerText: Player
+      Connections: 
+  CurrentSet: 0
+  TabList:
+  - BookDetails
 --- !u!4 &2294123457314662690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8353040013784625536, guid: f12da5033e1dfb04ea12508dad1b8c06,
